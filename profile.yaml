@@ -1,0 +1,34 @@
+last_updated: 2026-04-25
+
+preferences:
+  proteins: []
+  cuisines: []
+  avoid: []
+
+patterns:
+  low_effort_nights: []
+  high_waste_items: []
+  unplanned_purchase_categories: []
+
+spend:
+  monthly_actuals:
+    "2026-04": 131.67    # HT $66.93 + WF $64.74; includes $19.49 dog food (non-grocery)
+  trip_history:
+    - date: 2026-04-25
+      store: Harris Teeter
+      planned: null       # no shopping list on file for this date
+      actual: 66.93
+      unplanned: null
+    - date: 2026-04-24
+      store: Whole Foods
+      planned: null       # no shopping list on file for this date
+      actual: 64.74
+      unplanned: null
+
+insights:
+  - "2026-04-25: Dual coffee purchase on single HT order — whole bean ($9.99) and cold brew ($7.59), totaling $17.58"
+  - "2026-04-25: Cabot Whole Milk Greek Yogurt purchased at HT — not labeled lactose-free; household has lactose-free dietary requirement. Lactaid milk was also purchased. Monitor if this causes issues."
+  - "2026-04-25: Regular whole milk (1 gal, HT) and Lactaid 2% (½ gal, HT) both purchased — likely for different household members"
+  - "2026-04-24: Whole Paws dog food ($19.49) purchased via Whole Foods order — inflates grocery trip total; consider tracking separately"
+  - "2026-04-25: No shopping list was on file for either April trip — reconciliation could not identify planned vs. unplanned items"
+  - "2026-02-05: Receipt in reciepts/ folder not yet reconciled — process when ready"

@@ -1,0 +1,157 @@
+{
+  "greek yogurt": {
+    "unit": "2 lb container",
+    "observations": [
+      { "store": "Harris Teeter", "price": 4.99, "date": "2026-04-25", "brand": "Cabot Creamery Whole Milk Plain" }
+    ],
+    "estimated": 4.99
+  },
+  "coffee (whole bean)": {
+    "unit": "12 oz bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 9.99, "date": "2026-04-25", "brand": "Charleston Coffee Roasters Kiawah Dark Roast Organic" }
+    ],
+    "estimated": 9.99
+  },
+  "lemon": {
+    "unit": "each",
+    "observations": [
+      { "store": "Harris Teeter", "price": 0.50, "date": "2026-04-25" }
+    ],
+    "estimated": 0.50
+  },
+  "banana": {
+    "unit": "each",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.99, "date": "2026-04-25", "notes": "16 oz pre-sliced bag" },
+      { "store": "Whole Foods", "price": 1.52, "date": "2026-04-24", "notes": "single organic banana" }
+    ],
+    "estimated": 1.52
+  },
+  "hamburger buns": {
+    "unit": "8 ct",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.00, "date": "2026-04-25", "brand": "Harris Teeter 3.75 inch" }
+    ],
+    "estimated": 2.00
+  },
+  "whole milk": {
+    "unit": "gallon",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.69, "date": "2026-04-25", "brand": "Harris Teeter Vitamin D" }
+    ],
+    "estimated": 3.69
+  },
+  "all-purpose flour": {
+    "unit": "5 lb bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.69, "date": "2026-04-25", "brand": "King Arthur Unbleached" }
+    ],
+    "estimated": 5.69
+  },
+  "cornbread mix": {
+    "unit": "15 oz box",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.99, "date": "2026-04-25", "brand": "Krusteaz Honey" }
+    ],
+    "estimated": 2.99
+  },
+  "lactaid milk": {
+    "unit": "half gallon",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.50, "date": "2026-04-25", "brand": "Lactaid 2% Reduced Fat" }
+    ],
+    "estimated": 3.50
+  },
+  "tortilla chips": {
+    "unit": "10.1 oz bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 4.00, "date": "2026-04-25", "brand": "Late July Sea Salt Organic" }
+    ],
+    "estimated": 4.00
+  },
+  "granola": {
+    "unit": "10.6 oz bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.99, "date": "2026-04-25", "brand": "Nature's Path Love Crunch Dark Chocolate & Hazelnut Butter" }
+    ],
+    "estimated": 2.99
+  },
+  "frozen avocados": {
+    "unit": "16 oz bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 4.99, "date": "2026-04-25", "brand": "Private Selection Diced Haas" }
+    ],
+    "estimated": 4.99
+  },
+  "frozen spinach": {
+    "unit": "12 oz bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.99, "date": "2026-04-25", "brand": "Simple Truth Organic Chopped" }
+    ],
+    "estimated": 2.99
+  },
+  "cold brew coffee": {
+    "unit": "48 fl oz bottle",
+    "observations": [
+      { "store": "Harris Teeter", "price": 7.59, "date": "2026-04-25", "brand": "SToK Bold & Smooth Unsweetened Decaf" }
+    ],
+    "estimated": 7.59
+  },
+  "wild blueberries": {
+    "unit": "10 oz bag",
+    "observations": [
+      { "store": "Whole Foods", "price": 4.99, "date": "2026-04-24", "brand": "365 Organic Frozen" }
+    ],
+    "estimated": 4.99
+  },
+  "frozen dark cherries": {
+    "unit": "10 oz bag",
+    "observations": [
+      { "store": "Whole Foods", "price": 4.39, "date": "2026-04-24", "brand": "365 Organic Sweet Dark" }
+    ],
+    "estimated": 4.39
+  },
+  "peanut butter": {
+    "unit": "16 oz jar",
+    "observations": [
+      { "store": "Whole Foods", "price": 3.35, "date": "2026-04-24", "brand": "365 Organic Creamy Unsweetened No Stir" }
+    ],
+    "estimated": 3.35
+  },
+  "crackers": {
+    "unit": "6 oz box",
+    "observations": [
+      { "store": "Whole Foods", "price": 3.50, "date": "2026-04-24", "brand": "Milton's Organic Multi-Grain" }
+    ],
+    "estimated": 3.50
+  },
+  "lactose-free sour cream": {
+    "unit": "12 oz tub",
+    "observations": [
+      { "store": "Whole Foods", "price": 4.78, "date": "2026-04-24", "brand": "Green Valley Lactose Free Organic" }
+    ],
+    "estimated": 4.78
+  },
+  "honeycrisp apples": {
+    "unit": "per purchase",
+    "observations": [
+      { "store": "Whole Foods", "price": 7.03, "date": "2026-04-24", "notes": "quantity not specified on receipt" }
+    ],
+    "estimated": 7.03
+  },
+  "eggs": {
+    "unit": "18 ct",
+    "observations": [
+      { "store": "Whole Foods", "price": 5.49, "date": "2026-04-24", "brand": "Latta Egg Ranch Brown Large Grade A" }
+    ],
+    "estimated": 5.49
+  },
+  "cheddar cheese": {
+    "unit": "8 oz bar",
+    "observations": [
+      { "store": "Whole Foods", "price": 2.69, "date": "2026-04-24", "brand": "Cabot Seriously Sharp" }
+    ],
+    "estimated": 2.69
+  }
+}

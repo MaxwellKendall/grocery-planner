@@ -1,0 +1,116 @@
+last_updated: 2026-04-25
+
+staples:
+  olive oil:
+    status: stocked
+    last_restocked: null
+  kosher salt:
+    status: stocked
+    last_restocked: null
+  black pepper:
+    status: stocked
+    last_restocked: null
+  garlic:
+    status: stocked
+    last_restocked: null
+  chicken stock:
+    status: stocked
+    last_restocked: null
+  beef stock:
+    status: stocked
+    last_restocked: null
+
+current_stock:
+  # Harris Teeter — April 25, 2026
+  greek yogurt:
+    quantity: "1 container (2 lb)"
+    brand: "Cabot Creamery Whole Milk Plain"
+    note: "not labeled lactose-free"
+    expires: null
+  coffee whole bean:
+    quantity: "1 bag (12 oz)"
+    brand: "Charleston Coffee Roasters Kiawah Dark Roast Organic"
+    expires: null
+  lemon:
+    quantity: "1 each"
+    expires: null
+  bananas sliced:
+    quantity: "1 bag (16 oz)"
+    brand: "Harris Teeter pre-sliced"
+    expires: null
+  hamburger buns:
+    quantity: "8 ct"
+    brand: "Harris Teeter 3.75 inch"
+    expires: null
+  whole milk:
+    quantity: "1 gallon"
+    brand: "Harris Teeter Vitamin D"
+    expires: null
+  all-purpose flour:
+    quantity: "1 bag (5 lb)"
+    brand: "King Arthur Unbleached"
+    expires: null
+  cornbread mix:
+    quantity: "1 box (15 oz)"
+    brand: "Krusteaz Honey"
+    expires: null
+  lactaid milk:
+    quantity: "1 half gallon"
+    brand: "Lactaid 2% Reduced Fat"
+    expires: null
+  tortilla chips:
+    quantity: "1 bag (10.1 oz)"
+    brand: "Late July Sea Salt Organic"
+    expires: null
+  granola:
+    quantity: "2 bags (10.6 oz each)"
+    brand: "Nature's Path Love Crunch Dark Chocolate & Hazelnut Butter"
+    expires: null
+  frozen avocados:
+    quantity: "1 bag (16 oz)"
+    brand: "Private Selection Diced Haas"
+    expires: null
+  frozen spinach:
+    quantity: "1 bag (12 oz)"
+    brand: "Simple Truth Organic Chopped"
+    expires: null
+  cold brew coffee:
+    quantity: "1 bottle (48 fl oz)"
+    brand: "SToK Unsweetened Decaf"
+    expires: null
+
+  # Whole Foods — April 24, 2026 (delivered April 25)
+  frozen wild blueberries:
+    quantity: "1 bag (10 oz)"
+    brand: "365 Organic"
+    expires: null
+  frozen dark cherries:
+    quantity: "1 bag (10 oz)"
+    brand: "365 Organic Sweet Dark"
+    expires: null
+  peanut butter:
+    quantity: "1 jar (16 oz)"
+    brand: "365 Organic Creamy Unsweetened"
+    expires: null
+  crackers:
+    quantity: "1 box (6 oz)"
+    brand: "Milton's Organic Multi-Grain"
+    expires: null
+  banana:
+    quantity: "1 each"
+    expires: null
+  lactose-free sour cream:
+    quantity: "1 tub (12 oz)"
+    brand: "Green Valley Lactose Free Organic"
+    expires: null
+  honeycrisp apples:
+    quantity: "purchased 2026-04-24 (qty unknown)"
+    expires: null
+  eggs:
+    quantity: "18 large brown"
+    brand: "Latta Egg Ranch"
+    expires: null
+  cheddar cheese:
+    quantity: "1 bar (8 oz)"
+    brand: "Cabot Seriously Sharp"
+    expires: null
