@@ -1,0 +1,45 @@
+household:
+  size: 4
+  adults: 2
+  children: 2
+  location: Charleston, SC
+
+dietary:
+  requirements: []
+  preferences:
+    - balanced
+    - family-friendly
+  avoid: []
+  goals:
+    - lose weight
+    - build muscle
+
+meals:
+  dinner_per_week: 5
+  lunch_per_week: 5
+  breakfast_per_week: 0
+
+budget:
+  monthly_grocery_target: 800
+  per_trip_soft_limit: 200
+  cost_per_serving_target: 4.00
+  track_unplanned_spend: true
+
+pantry_staples:
+  - olive oil
+  - kosher salt
+  - black pepper
+  - garlic
+  - chicken stock
+
+pinned_recipes:
+  - recipes/chicken-tacos.md
+  - recipes/sheet-pan-salmon.md
+
+stores:
+  preferred:
+    - harris teeter
+    - whole foods
+  notes:
+    Costco: bulk proteins and staples only
+    Publix: weekly produce and dairy
