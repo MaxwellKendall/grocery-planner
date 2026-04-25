@@ -1,12 +1,18 @@
-# Watermelon and Feta Salad
-
-**Servings:** 4 servings | **Total:** 5min
-
-> Source: https://cooking.nytimes.com/recipes/1023324-watermelon-and-feta-salad
+---
+name: Watermelon and Feta Salad
+protein: none
+servings: 4
+effort: low
+prep_time: 5min
+cook_time: 0min
+cost_per_serving: ~$X.XX
+tags: [quick, vegetarian, summer]
+source: https://cooking.nytimes.com/recipes/1023324-watermelon-and-feta-salad
+---
 
 ## Ingredients
 
-- 2 pounds seedless watermelon (without rinds), thinly sliced into large, irregular pieces 
+- 2 pounds seedless watermelon (without rinds), thinly sliced into large, irregular pieces
 - 2 tablespoons white or red balsamic vinegar
 - Salt
 - 1 (6-ounce) block Greek feta, thinly sliced into large, irregular pieces

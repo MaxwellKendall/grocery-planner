@@ -1,8 +1,14 @@
-# Instant Pot Mashed Potatoes With Sour Cream and Chives
-
-**Servings:** 6 to 8 servings | **Total:** 20min
-
-> Source: https://cooking.nytimes.com/recipes/1018863-instant-pot-mashed-potatoes-with-sour-cream-and-chives
+---
+name: Instant Pot Mashed Potatoes With Sour Cream and Chives
+protein: none
+servings: 6
+effort: low
+prep_time: 5min
+cook_time: 15min
+cost_per_serving: ~$X.XX
+tags: [quick, weeknight, instant-pot]
+source: https://cooking.nytimes.com/recipes/1018863-instant-pot-mashed-potatoes-with-sour-cream-and-chives
+---
 
 ## Ingredients
 

@@ -20,10 +20,12 @@ Fetch a recipe from a URL and save it to `recipes/` in this repo.
 2. **Parse the recipe** — extract:
    - Recipe name
    - Servings / yield
-   - Prep time, cook time, total time
+   - Prep time, cook time
    - Ingredients (with quantities and units)
    - Instructions (numbered steps)
-   - Any notes or tips
+   - Infer `protein` from the ingredients (e.g. chicken, salmon, beef, pork, shrimp, tofu, eggs — use the dominant protein or `none` if vegetarian with no clear protein)
+   - Infer `effort` from total time and step count: under 30min and ≤6 steps = `low`; 30–60min or 7–12 steps = `medium`; over 60min or 13+ steps = `high`
+   - Infer `tags` from the recipe content (e.g. `quick`, `weeknight`, `slow-cooker`, `one-pan`, `meal-prep`)
 3. **Derive a filename** — slugify the recipe name (lowercase, hyphens, no special chars), e.g. `sheet-pan-salmon.md`
 4. **Check for conflicts** — check if a file with that name already exists in `recipes/` and warn the user if so
 5. **Format the recipe** using the household recipe format (see below)
@@ -34,11 +36,17 @@ Fetch a recipe from a URL and save it to `recipes/` in this repo.
 ## Recipe File Format
 
 ```markdown
-# [Recipe Name]
-
-**Servings:** X | **Prep:** Xmin | **Cook:** Xmin | **Total:** Xmin
-
-> Source: [URL]
+---
+name: [Recipe Name]
+protein: [chicken | beef | salmon | pork | shrimp | tofu | eggs | none]
+servings: [number]
+effort: [low | medium | high]
+prep_time: [Xmin | Xhr Xmin]
+cook_time: [Xmin | Xhr Xmin]
+cost_per_serving: ~$X.XX
+tags: [tag1, tag2]
+source: [URL]
+---
 
 ## Ingredients
 
@@ -49,15 +57,13 @@ Fetch a recipe from a URL and save it to `recipes/` in this repo.
 
 1. Step one
 2. Step two
-
-## Notes
-
-- Any tips or variations
 ```
+
+`cost_per_serving` must always be left as `~$X.XX` — never fill in a number. The user or review mode sets this from actual spend data.
 
 ## Browser Console Alternative
 
-If WebFetch fails (paywalled, JS-rendered, etc.), the user can run the script in [reference.md](reference.md) in the browser console and paste the output. Output is already in the household recipe format — add a Notes section manually if needed, then confirm to write.
+If WebFetch fails (paywalled, JS-rendered, etc.), the user can run the script in [reference.md](reference.md) in the browser console and paste the output. The script outputs the correct format with `# TODO` placeholders for fields it can't infer — fill those in before confirming to write.
 
 ## Important
 

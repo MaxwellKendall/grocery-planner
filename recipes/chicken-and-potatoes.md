@@ -1,8 +1,14 @@
-# Sheet-Pan Chicken and Potatoes With Feta, Lemon and Dill
-
-**Servings:** 4 servings | **Total:** 45min
-
-> Source: https://cooking.nytimes.com/recipes/1020726-sheet-pan-chicken-and-potatoes-with-feta-lemon-and-dill
+---
+name: Sheet-Pan Chicken and Potatoes With Feta, Lemon and Dill
+protein: chicken
+servings: 4
+effort: medium
+prep_time: 15min
+cook_time: 30min
+cost_per_serving: ~$X.XX
+tags: [one-pan, weeknight]
+source: https://cooking.nytimes.com/recipes/1020726-sheet-pan-chicken-and-potatoes-with-feta-lemon-and-dill
+---
 
 ## Ingredients
 

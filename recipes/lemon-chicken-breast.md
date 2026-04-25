@@ -1,8 +1,14 @@
-# Chicken Breasts With Lemon
-
-**Servings:** 4 servings | **Total:** 25min
-
-> Source: https://cooking.nytimes.com/recipes/4117-chicken-breasts-with-lemon
+---
+name: Chicken Breasts With Lemon
+protein: chicken
+servings: 4
+effort: low
+prep_time: 5min
+cook_time: 20min
+cost_per_serving: ~$X.XX
+tags: [quick, weeknight]
+source: https://cooking.nytimes.com/recipes/4117-chicken-breasts-with-lemon
+---
 
 ## Ingredients
 

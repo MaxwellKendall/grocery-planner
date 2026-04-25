@@ -1,8 +1,14 @@
-# Crisp Gnocchi with Sausage and Peas
-
-**Servings:** 4 | **Prep:** 0min | **Cook:** 20min | **Total:** 20min
-
-> Source: https://cooking.nytimes.com/recipes/1024164-crisp-gnocchi-with-sausage-and-peas
+---
+name: Crisp Gnocchi with Sausage and Peas
+protein: pork
+servings: 4
+effort: low
+prep_time: 0min
+cook_time: 20min
+cost_per_serving: ~$X.XX
+tags: [quick, weeknight, one-pan]
+source: https://cooking.nytimes.com/recipes/1024164-crisp-gnocchi-with-sausage-and-peas
+---
 
 ## Ingredients
 
@@ -21,9 +27,3 @@
 2. Add the remaining 2 tablespoons oil to the skillet, still over medium-high. Add the sausage and break into small pieces. Cook, undisturbed, until browned, 2 to 4 minutes. Stir and cook until cooked through, another 2 to 4 minutes.
 3. Stir in the peas, mustard, and ½ cup water; scrape up the browned bits. Simmer until peas are cooked through, 2 to 4 minutes.
 4. Add the browned gnocchi and Parmesan; stir until cheese has melted. Season with salt and pepper, then stir in the herbs. Serve topped with more herbs, Parmesan, and black pepper as desired.
-
-## Notes
-
-- No need to boil the gnocchi first — sear them straight from the package.
-- For a creamier dish, add a splash of heavy cream along with the browned gnocchi in Step 4.
-- Works with hot or sweet Italian sausage.

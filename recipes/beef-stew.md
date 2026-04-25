@@ -1,8 +1,14 @@
-# Beef Stew
-
-**Servings:** 4 servings | **Prep:** 15min | **Cook:** 2hr 30min | **Total:** 2hr 45min
-
-> Source: https://cooking.nytimes.com/recipes/4735-old-fashioned-beef-stew
+---
+name: Beef Stew
+protein: beef
+servings: 4
+effort: high
+prep_time: 15min
+cook_time: 2hr 30min
+cost_per_serving: ~$X.XX
+tags: [one-pot]
+source: https://cooking.nytimes.com/recipes/4735-old-fashioned-beef-stew
+---
 
 ## Ingredients
 

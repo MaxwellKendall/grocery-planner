@@ -1,8 +1,14 @@
-# Slow Cooker Chipotle-Honey Chicken Tacos
-
-**Servings:** 4 servings | **Total:** 5hr
-
-> Source: https://cooking.nytimes.com/recipes/1019693-slow-cooker-chipotle-honey-chicken-tacos
+---
+name: Slow Cooker Chipotle-Honey Chicken Tacos
+protein: chicken
+servings: 4
+effort: high
+prep_time: 10min
+cook_time: 5hr
+cost_per_serving: ~$X.XX
+tags: [slow-cooker, weeknight, meal-prep]
+source: https://cooking.nytimes.com/recipes/1019693-slow-cooker-chipotle-honey-chicken-tacos
+---
 
 ## Ingredients
 
@@ -21,5 +27,5 @@
 
 ## Instructions
 
-1. Combine the chicken, honey, onion and garlic powders, cumin, salt and chipotle chiles and adobo sauce in a 5- to 8-quart slow cooker. Stir well. Cook for at least 3 hours and up to 5 hours on low. If it’s more convenient, you can let the slow cooker switch to warm after 5 hours. The dish will hold on warm for about another 3 hours before the chicken starts to become quite dry.
+1. Combine the chicken, honey, onion and garlic powders, cumin, salt and chipotle chiles and adobo sauce in a 5- to 8-quart slow cooker. Stir well. Cook for at least 3 hours and up to 5 hours on low. If it's more convenient, you can let the slow cooker switch to warm after 5 hours. The dish will hold on warm for about another 3 hours before the chicken starts to become quite dry.
 2. Using two forks, coarsely shred the chicken in the sauce. Stir in the black beans and lime juice. Cover and let the beans warm through, about 5 minutes. Taste and add more salt or lime juice if necessary. Serve in tortillas with pickled onion and avocado.

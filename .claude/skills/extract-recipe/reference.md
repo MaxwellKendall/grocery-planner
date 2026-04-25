@@ -54,5 +54,4 @@ const md = [
 
 console.log(md);
 copy(md);
-md;
 ```

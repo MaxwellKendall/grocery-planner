@@ -1,8 +1,14 @@
-# Lemon-Garlic Kale Salad
-
-**Servings:** 8 to 12 servings | **Total:** 25min
-
-> Source: https://cooking.nytimes.com/recipes/1015707-lemon-garlic-kale-salad
+---
+name: Lemon-Garlic Kale Salad
+protein: none
+servings: 8
+effort: low
+prep_time: 15min
+cook_time: 10min
+cost_per_serving: ~$X.XX
+tags: [quick, meal-prep]
+source: https://cooking.nytimes.com/recipes/1015707-lemon-garlic-kale-salad
+---
 
 ## Ingredients
 

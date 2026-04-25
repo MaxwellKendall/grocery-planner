@@ -1,8 +1,14 @@
-# Orzo Salad
-
-**Servings:** 8 | **Prep:** — | **Cook:** — | **Total:** —
-
-> Source: https://cooking.nytimes.com/recipes/1025349-orzo-salad
+---
+name: Orzo Salad
+protein: none
+servings: 8
+effort: medium
+prep_time: 10min
+cook_time: 20min
+cost_per_serving: ~$X.XX
+tags: [meal-prep, vegetarian]
+source: https://cooking.nytimes.com/recipes/1025349-orzo-salad
+---
 
 ## Ingredients
 

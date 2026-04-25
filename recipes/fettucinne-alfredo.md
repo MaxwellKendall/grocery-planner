@@ -1,8 +1,14 @@
-# Fettuccine Alfredo
-
-**Servings:** 6 servings | **Total:** 15min
-
-> Source: https://cooking.nytimes.com/recipes/9025-elaines-fettuccine-alfredo
+---
+name: Fettuccine Alfredo
+protein: none
+servings: 6
+effort: low
+prep_time: 5min
+cook_time: 10min
+cost_per_serving: ~$X.XX
+tags: [quick, weeknight]
+source: https://cooking.nytimes.com/recipes/9025-elaines-fettuccine-alfredo
+---
 
 ## Ingredients
 
@@ -19,4 +25,4 @@
 
 1. Bring 6 quarts generously salted water to a boil.
 2. While the water heats, melt the butter in a large, deep skillet over medium-high heat. Add garlic; sauté until fragrant and sizzling, about 2 minutes. Whisk the cream with the egg yolk in a bowl until blended; pour into the garlic butter. Reduce heat to medium-low; stir until hot but not boiling. Keep warm over low heat.
-3. Meanwhile, cook the pasta, partially covered, until al dente. (The pasta will float when it’s done.) Drain in a colander, shaking out excess water, but reserve a little cooking water. Pour hot pasta into the cream mixture and toss to coat (still over low heat). Add the cheese and keep tossing gently until cream is mostly absorbed. Season with salt and pepper. If sauce is absorbed too much, toss with a little pasta water. Serve in warm bowls.
+3. Meanwhile, cook the pasta, partially covered, until al dente. (The pasta will float when it's done.) Drain in a colander, shaking out excess water, but reserve a little cooking water. Pour hot pasta into the cream mixture and toss to coat (still over low heat). Add the cheese and keep tossing gently until cream is mostly absorbed. Season with salt and pepper. If sauce is absorbed too much, toss with a little pasta water. Serve in warm bowls.

@@ -1,8 +1,14 @@
-# Lemon Potato Salad With Mint
-
-**Servings:** 8 servings | **Total:** 45min
-
-> Source: https://cooking.nytimes.com/recipes/1017405-lemon-potato-salad-with-mint
+---
+name: Lemon Potato Salad With Mint
+protein: none
+servings: 8
+effort: medium
+prep_time: 10min
+cook_time: 35min
+cost_per_serving: ~$X.XX
+tags: [meal-prep, vegetarian]
+source: https://cooking.nytimes.com/recipes/1017405-lemon-potato-salad-with-mint
+---
 
 ## Ingredients
 
