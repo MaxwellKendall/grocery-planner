@@ -10,16 +10,17 @@ which mode they want, or you can infer it from context.
 ## Repo Structure
 
 ```
-config.yaml         # static household intent — edit manually
-pantry.yaml         # current pantry state — you update this
-profile.yaml        # learned insights from history — you update this
-prices.json         # price history per item — you update this
-recipes/            # household recipe library in markdown
-plans/              # meal plans, one file per week: YYYY-MM-DD.md (Monday date)
-lists/              # shopping lists derived from plans: YYYY-MM-DD.md (trip date)
+config.yaml              # static household intent — edit manually
+pantry.yaml              # current pantry state — you update this
+profile.yaml             # learned insights from history — you update this
+prices.json              # price history per item — you update this
+recent-recipes.yaml      # recipe usage history for repeat-avoidance — you update this
+recipes/                 # household recipe library in markdown
+plans/                   # meal plans, one file per week: YYYY-MM-DD.md (Monday date)
+lists/                   # shopping lists derived from plans: YYYY-MM-DD.md (trip date)
 receipts/
-  raw/              # user uploads receipts here (pdf, heic, jpg, png)
-  processed/        # move receipts here after reconciliation
+  raw/                   # user uploads receipts here (pdf, heic, jpg, png)
+  processed/             # move receipts here after reconciliation
 ```
 
 ---
@@ -79,7 +80,7 @@ pantry_staples:
   - eggs
   - butter
 
-pinned_recipes:
+favorite_recipes:             # shorter repeat cooldown (see recent-recipes.yaml)
   - recipes/chicken-tacos.md
   - recipes/sheet-pan-salmon.md
 
@@ -100,10 +101,14 @@ Triggered by: "plan this week", "plan next month", "what should we eat this week
 
 Steps:
 1. Read `config.yaml` — household size, dietary requirements, goals, meal cadence,
-   pinned recipes, pantry staples, budget targets
-2. Read `profile.yaml` — avoid recently repeated meals, honor stated preferences,
-   apply any learned patterns (e.g. "simple meals on Wednesdays")
-3. Read `plans/` directory — check last 2-3 weeks to avoid repetition
+   pantry staples, budget targets, and `favorite_recipes`. Read all files in
+   `recipes/` to discover the available recipe library.
+2. Read `recent-recipes.yaml` — apply cooldown rules before selecting any recipe:
+   - Regular recipes: do not repeat within **21 days** of last use
+   - Recipes listed in `config.yaml` `favorite_recipes`: do not repeat within **10 days**
+   - Recipes with no entry (never used) are always available
+3. Read `profile.yaml` — honor stated preferences and learned patterns
+   (e.g. "simple meals on Wednesdays")
 4. Generate a meal plan covering the requested horizon. Default to weekly.
    - Respect the meal cadence in config (e.g. dinner 5x/week, lunch 5x/week)
    - Distribute protein sources across the week
@@ -111,7 +116,9 @@ Steps:
    - Include rough per-meal protein and calorie estimates if dietary goals are set
    - Include estimated cost per serving for each meal using `prices.json`
    - Flag any meal that exceeds `cost_per_serving_target` from config
-5. Write the plan to `plans/YYYY-MM-DD.md` using the Monday of the target week
+5. Write the plan to `plans/YYYY-MM-DD.md` using the Monday of the target week.
+   Update `recent-recipes.yaml` — set `last_used` to the planned meal date for
+   every recipe used in the new plan.
 6. Show estimated total ingredient cost for the week against the prorated
    monthly budget target (monthly_target / 4.33)
 7. Ask the user if they want a shopping list generated from this plan immediately
@@ -285,6 +292,23 @@ spend:
       unplanned: 17.32
 insights: []                      # free-text observations, newest first
 ```
+
+---
+
+## recent-recipes.yaml Schema
+
+```yaml
+last_updated: YYYY-MM-DD
+recipes:
+  chicken-tacos:                  # filename stem, no path or extension
+    last_used: YYYY-MM-DD
+  sheet-pan-salmon:
+    last_used: YYYY-MM-DD
+```
+
+Keys are the recipe filename stem (e.g. `chicken-tacos` for `recipes/chicken-tacos.md`).
+Only update `last_used` — never delete entries. If a recipe has no entry it is
+treated as never used and is always available.
 
 ---
 

@@ -5,8 +5,11 @@ household:
   location: Charleston, SC
 
 dietary:
-  requirements: []
+  requirements: [lactose-free]
   preferences:
+    - high protien
+    - slow-cooker
+    - instant-pot
     - balanced
     - family-friendly
   avoid: []
@@ -31,10 +34,7 @@ pantry_staples:
   - black pepper
   - garlic
   - chicken stock
-
-pinned_recipes:
-  - recipes/chicken-tacos.md
-  - recipes/sheet-pan-salmon.md
+  - beef stock
 
 stores:
   preferred:
