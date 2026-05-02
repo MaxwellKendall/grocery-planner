@@ -16,7 +16,8 @@
   "lemon": {
     "unit": "each",
     "observations": [
-      { "store": "Harris Teeter", "price": 0.50, "date": "2026-04-25" }
+      { "store": "Harris Teeter", "price": 0.50, "date": "2026-04-25" },
+      { "store": "Harris Teeter", "price": 0.50, "date": "2026-05-01", "notes": "large, VIC price; 2 for $1.00" }
     ],
     "estimated": 0.50
   },
@@ -24,7 +25,8 @@
     "unit": "each",
     "observations": [
       { "store": "Harris Teeter", "price": 2.99, "date": "2026-04-25", "notes": "16 oz pre-sliced bag" },
-      { "store": "Whole Foods", "price": 1.52, "date": "2026-04-24", "notes": "single organic banana" }
+      { "store": "Whole Foods", "price": 1.52, "date": "2026-04-24", "notes": "single organic banana" },
+      { "store": "Harris Teeter", "price": 0.59, "date": "2026-05-01", "notes": "per lb, yellow bananas loose; 3.86 lbs = $2.26" }
     ],
     "estimated": 1.52
   },
@@ -38,9 +40,17 @@
   "whole milk": {
     "unit": "gallon",
     "observations": [
-      { "store": "Harris Teeter", "price": 3.69, "date": "2026-04-25", "brand": "Harris Teeter Vitamin D" }
+      { "store": "Harris Teeter", "price": 3.69, "date": "2026-04-25", "brand": "Harris Teeter Vitamin D" },
+      { "store": "Harris Teeter", "price": 3.69, "date": "2026-05-01", "brand": "Harris Teeter Vitamin D" }
     ],
     "estimated": 3.69
+  },
+  "lactaid whole milk": {
+    "unit": "gallon",
+    "observations": [
+      { "store": "Harris Teeter", "price": 6.99, "date": "2026-05-01", "brand": "Lactaid Whole Milk" }
+    ],
+    "estimated": 6.99
   },
   "all-purpose flour": {
     "unit": "5 lb bag",
@@ -134,11 +144,12 @@
     "estimated": 4.78
   },
   "honeycrisp apples": {
-    "unit": "per purchase",
+    "unit": "per lb",
     "observations": [
-      { "store": "Whole Foods", "price": 7.03, "date": "2026-04-24", "notes": "quantity not specified on receipt" }
+      { "store": "Whole Foods", "price": 7.03, "date": "2026-04-24", "notes": "total purchase, weight unknown" },
+      { "store": "Harris Teeter", "price": 4.99, "date": "2026-05-01", "notes": "organic, per lb; 2.43 lbs = $12.13" }
     ],
-    "estimated": 7.03
+    "estimated": 4.99
   },
   "eggs": {
     "unit": "18 ct",
@@ -153,5 +164,216 @@
       { "store": "Whole Foods", "price": 2.69, "date": "2026-04-24", "brand": "Cabot Seriously Sharp" }
     ],
     "estimated": 2.69
+  },
+  "cabot cheese": {
+    "unit": "package",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.74, "date": "2026-05-01", "notes": "VIC price; variety unclear from receipt" }
+    ],
+    "estimated": 2.74
+  },
+  "string cheese": {
+    "unit": "package",
+    "observations": [
+      { "store": "Harris Teeter", "price": 4.99, "date": "2026-05-01", "brand": "Galbani" }
+    ],
+    "estimated": 4.99
+  },
+  "grass-fed butter": {
+    "unit": "package",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.39, "date": "2026-05-01", "brand": "organic grass-fed" }
+    ],
+    "estimated": 5.39
+  },
+  "yukon gold potatoes": {
+    "unit": "5 lb bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 6.99, "date": "2026-04-25" }
+    ],
+    "estimated": 6.99
+  },
+  "sweet potatoes": {
+    "unit": "bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.99, "date": "2026-05-01" }
+    ],
+    "estimated": 5.99
+  },
+  "carrots": {
+    "unit": "1 lb bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 1.49, "date": "2026-05-01" }
+    ],
+    "estimated": 1.49
+  },
+  "cucumber": {
+    "unit": "each",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.00, "date": "2026-05-01", "notes": "organic" }
+    ],
+    "estimated": 2.00
+  },
+  "lime": {
+    "unit": "each",
+    "observations": [
+      { "store": "Harris Teeter", "price": 0.89, "date": "2026-05-01", "notes": "large; 2 for $1.78" }
+    ],
+    "estimated": 0.89
+  },
+  "cuties mandarins": {
+    "unit": "bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 6.49, "date": "2026-05-01", "brand": "Cuties organic" }
+    ],
+    "estimated": 6.49
+  },
+  "fresh blueberries": {
+    "unit": "container",
+    "observations": [
+      { "store": "Harris Teeter", "price": 1.00, "date": "2026-05-01", "notes": "organic; 5/$5 deal, bought 2" }
+    ],
+    "estimated": 1.00
+  },
+  "salad kit": {
+    "unit": "kit",
+    "observations": [
+      { "store": "Harris Teeter", "price": 8.99, "date": "2026-05-01", "brand": "Creek" }
+    ],
+    "estimated": 8.99
+  },
+  "chicken breast (boneless skinless)": {
+    "unit": "per lb",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.99, "date": "2026-05-01", "notes": "Smart brand; VIC price; 0.84 lb = $5.03" }
+    ],
+    "estimated": 5.99
+  },
+  "ground beef": {
+    "unit": "package",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.87, "date": "2026-05-01", "notes": "80/20; weight not clear from receipt" }
+    ],
+    "estimated": 5.87
+  },
+  "niman ranch no sugar added": {
+    "unit": "package",
+    "observations": [
+      { "store": "Harris Teeter", "price": 8.59, "date": "2026-05-01", "notes": "no sugar added; likely bacon or sausage" }
+    ],
+    "estimated": 8.59
+  },
+  "mission flour tortillas": {
+    "unit": "pack",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.49, "date": "2026-05-01", "notes": "VIC from $4.99" }
+    ],
+    "estimated": 3.49
+  },
+  "mission tortilla strips": {
+    "unit": "bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.00, "date": "2026-05-01", "notes": "VIC from $3.99" }
+    ],
+    "estimated": 3.00
+  },
+  "baking powder": {
+    "unit": "container",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.69, "date": "2026-05-01" }
+    ],
+    "estimated": 3.69
+  },
+  "maple syrup": {
+    "unit": "bottle",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.50, "date": "2026-05-01", "brand": "Harris Teeter Golden Clear; VIC from $3.79" }
+    ],
+    "estimated": 3.50
+  },
+  "colored sweet peppers": {
+    "unit": "jar/bag",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.99, "date": "2026-05-01", "notes": "VIC from $4.99" }
+    ],
+    "estimated": 3.99
+  },
+  "redmond real salt": {
+    "unit": "shaker",
+    "observations": [
+      { "store": "Harris Teeter", "price": 6.69, "date": "2026-05-01" }
+    ],
+    "estimated": 6.69
+  },
+  "olipop soda": {
+    "unit": "can",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.00, "date": "2026-05-01", "notes": "VIC from $2.79; Classic Root Beer and Banana Cream flavors" }
+    ],
+    "estimated": 2.00
+  },
+  "zevia zero sugar soda": {
+    "unit": "each",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.49, "date": "2026-05-01" }
+    ],
+    "estimated": 5.49
+  },
+  "harney & sons tea": {
+    "unit": "box",
+    "observations": [
+      { "store": "Harris Teeter", "price": 7.99, "date": "2026-05-01" }
+    ],
+    "estimated": 7.99
+  },
+  "yogi tea": {
+    "unit": "box",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.19, "date": "2026-05-01", "brand": "Yogi Tea Organic Elderberry" }
+    ],
+    "estimated": 5.19
+  },
+  "perfect snack bars": {
+    "unit": "pack",
+    "observations": [
+      { "store": "Harris Teeter", "price": 7.99, "date": "2026-05-01", "notes": "VIC from $9.19" }
+    ],
+    "estimated": 7.99
+  },
+  "crazy richard's nut butter": {
+    "unit": "jar",
+    "observations": [
+      { "store": "Harris Teeter", "price": 4.69, "date": "2026-05-01" }
+    ],
+    "estimated": 4.69
+  },
+  "cantaloupe": {
+    "unit": "each",
+    "observations": [
+      { "store": "Harris Teeter", "price": 4.99, "date": "2026-04-25", "notes": "VIC price; personal melon size" }
+    ],
+    "estimated": 4.99
+  },
+  "celestial tea": {
+    "unit": "box",
+    "observations": [
+      { "store": "Harris Teeter", "price": 3.99, "date": "2026-04-25" }
+    ],
+    "estimated": 3.99
+  },
+  "ricola throat drops": {
+    "unit": "package",
+    "observations": [
+      { "store": "Harris Teeter", "price": 5.89, "date": "2026-04-25", "notes": "VIC price; Max Throat variety" },
+      { "store": "Harris Teeter", "price": 1.64, "date": "2026-05-01", "notes": "VIC price; standard lozenge; taxable" }
+    ],
+    "estimated": 1.64
+  },
+  "fresh mint": {
+    "unit": "package",
+    "observations": [
+      { "store": "Harris Teeter", "price": 2.00, "date": "2026-04-25", "notes": "VIC price" }
+    ],
+    "estimated": 2.00
   }
 }
