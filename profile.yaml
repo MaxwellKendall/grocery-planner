@@ -1,4 +1,4 @@
-last_updated: 2026-04-25
+last_updated: 2026-05-02
 
 preferences:
   proteins: []
@@ -8,27 +8,98 @@ preferences:
 patterns:
   low_effort_nights: []
   high_waste_items: []
-  unplanned_purchase_categories: []
+  unplanned_purchase_categories:
+    - beverages (tea, soda, specialty drinks)
+    - snack bars
+    - dining out / fast food (not tracked in grocery budget but significant)
 
 spend:
   monthly_actuals:
-    "2026-04": 131.67    # HT $66.93 + WF $64.74; includes $19.49 dog food (non-grocery)
+    "2026-04": 991.55   # full-statement review: HT $666.45 (6 trips net returns) + WF $187.89 (3 trips) + TJ $50.27 + Publix $57.43 + NY Butcher $31.41 + Amazon Grocery $10.59 + Earl Freeman Farms $7.00 − $19.49 dog food
+    "2026-04_dining": 919.17  # dining out (NOT in grocery budget): CFA $133, Domino's $108, sit-down $461, cafes/bagels $145, delivery $33
+    "2026-05": 189.19   # HT May 1 stocking trip
   trip_history:
+    - date: 2026-05-01
+      store: Harris Teeter
+      planned: null
+      actual: 189.19
+      unplanned: null     # large stocking trip; no active list
+    - date: 2026-04-27
+      store: Harris Teeter #0087
+      planned: null
+      actual: 62.84
+      unplanned: null     # credit card; no list on file
+    - date: 2026-04-25
+      store: Harris Teeter (2nd trip)
+      planned: 0.00
+      actual: 26.79
+      unplanned: 26.79
     - date: 2026-04-25
       store: Harris Teeter
-      planned: null       # no shopping list on file for this date
+      planned: null
       actual: 66.93
       unplanned: null
-    - date: 2026-04-24
+    - date: 2026-04-22
+      store: Harris Teeter
+      planned: null
+      actual: 131.88
+      unplanned: null     # no list; partial return of $20.51 later
+    - date: 2026-04-21
       store: Whole Foods
-      planned: null       # no shopping list on file for this date
-      actual: 64.74
+      planned: null
+      actual: 75.10
+      unplanned: null
+    - date: 2026-04-16
+      store: Harris Teeter
+      planned: null
+      actual: 177.24
+      unplanned: null     # largest single grocery trip in April; no list
+    - date: 2026-04-16
+      store: New York Butcher Shop
+      planned: null
+      actual: 31.41
+      unplanned: null
+    - date: 2026-04-14
+      store: Harris Teeter
+      planned: null
+      actual: 93.79
+      unplanned: null
+    - date: 2026-04-13
+      store: Publix Daniel Island
+      planned: null
+      actual: 57.43
+      unplanned: null
+    - date: 2026-04-08
+      store: Whole Foods
+      planned: null
+      actual: 31.83
+      unplanned: null
+    - date: 2026-04-08
+      store: Harris Teeter
+      planned: null
+      actual: 127.49
+      unplanned: null
+    - date: 2026-04-07
+      store: Trader Joe's
+      planned: null
+      actual: 50.27
+      unplanned: null
+    - date: 2026-04-02
+      store: Whole Foods
+      planned: null
+      actual: 80.96
       unplanned: null
 
 insights:
-  - "2026-04-25: Dual coffee purchase on single HT order — whole bean ($9.99) and cold brew ($7.59), totaling $17.58"
-  - "2026-04-25: Cabot Whole Milk Greek Yogurt purchased at HT — not labeled lactose-free; household has lactose-free dietary requirement. Lactaid milk was also purchased. Monitor if this causes issues."
-  - "2026-04-25: Regular whole milk (1 gal, HT) and Lactaid 2% (½ gal, HT) both purchased — likely for different household members"
+  - "2026-05-02: FULL APRIL STATEMENT REVIEW — actual grocery spend was $991.55 vs. $800 target (24% over). Prior profile entry of $158.46 only captured 3 of 13 grocery transactions (receipt processing was far behind)."
+  - "2026-05-02: April dining context — Domino's ($108, 3 orders) is hospitality for a college Bible study; Paris Baguette ($39, weekly) is a men's Bible study meetup. Sit-down restaurants are a separate dating/social budget. These are not grocery budget concerns."
+  - "2026-05-02: Trip frequency is the core grocery problem — 6 HT trips in April with no meal plan driving them. Largest single trip ($177, Apr 16) and 2nd largest ($132, Apr 22) were 6 days apart."
+  - "2026-05-02: Whole Foods used as a general grocery store (3 visits: $81, $32, $75) rather than specialty-only — premium pricing on everyday items."
+  - "2026-05-02: HT returns of $20.51 on Apr 23 suggest overbought or duplicate items from unplanned shopping."
+  - "2026-05-01: Large HT stocking trip ($189.19) — significant beverage spend (~$30+: Olipop, Zevia, Yogi Tea, Harney & Sons, Crafters, CMATE); consider adding a beverage budget line"
+  - "2026-05-01: Honeycrisp apples at $4.99/lb (HT, organic, 2.43 lbs) — notably cheaper than prior WF purchase; prefer HT for apples"
+  - "2026-05-01: Bought Lactaid Whole Milk ($6.99/gal) in addition to HT Whole Milk ($3.69/gal) — continuing dual-milk pattern for different household members"
+  - "2026-04-25: Dual coffee purchase on single HT order — whole bean ($9.99) and cold brew ($7.59)"
+  - "2026-04-25: Cabot Whole Milk Greek Yogurt purchased at HT — not labeled lactose-free; household has lactose-free dietary requirement. Monitor if this causes issues."
   - "2026-04-24: Whole Paws dog food ($19.49) purchased via Whole Foods order — inflates grocery trip total; consider tracking separately"
-  - "2026-04-25: No shopping list was on file for either April trip — reconciliation could not identify planned vs. unplanned items"
   - "2026-02-05: Receipt in reciepts/ folder not yet reconciled — process when ready"
