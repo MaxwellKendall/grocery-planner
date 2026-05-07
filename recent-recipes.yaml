@@ -1,5 +1,496 @@
 last_updated: 2026-05-06
 recipes:
+  30-minute-crispy-thai-peanut-chicken-ramen:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  5-ingredient-apple-and-white-cheddar-tart:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 2
+      protein: 1
+      composite: 3.0
+      rated_on: 2026-05-06
+  6-simple-chicken-marinade-recipes:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 4.0
+      rated_on: 2026-05-06
+  apple-cider-braised-pork-shoulder:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 5
+      composite: 3.8
+      rated_on: 2026-05-06
+  baked-crunchy-hot-honey-chicken:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  baked-gnocchi:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 2
+      composite: 3.4
+      rated_on: 2026-05-06
+  baked-mushroom-chicken:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  baked-rosemary-chicken-meatballs-with-tomato-orzo:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  balsamic-glazed-mushroom-tart:
+    ratings:
+      effort: 2
+      bang_for_buck: 2
+      hospitality: 2
+      nutrition: 2
+      protein: 1
+      composite: 1.8
+      rated_on: 2026-05-06
+  bang-bang-salmon:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 3
+      protein: 5
+      composite: 3.4
+      rated_on: 2026-05-06
+  basic-okonomiyaki:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      protein: 3
+      composite: 4.0
+      rated_on: 2026-05-06
+  beef-stew:
+    last_used: 2026-04-30
+    ratings:
+      effort: 1
+      bang_for_buck: 2
+      hospitality: 2
+      nutrition: 3
+      protein: 5
+      composite: 2.6
+      rated_on: 2026-05-06
+  best-chicken-tikka-masala-recipe:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  best-homemade-salsa-ever:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 1
+      composite: 4.2
+      rated_on: 2026-05-06
+  birria-ramen-with-beef-in-the-pressure-cooker:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 2
+      protein: 5
+      composite: 3.6
+      rated_on: 2026-05-06
+  bourbon-pecan-peach-crisp:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 2
+      protein: 1
+      composite: 2.4
+      rated_on: 2026-05-06
+  broccoli-and-cheese-risotto:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      protein: 2
+      composite: 3.8
+      rated_on: 2026-05-06
+  cajun-potato-soup:
+    ratings:
+      effort: 1
+      bang_for_buck: 3
+      hospitality: 2
+      nutrition: 2
+      protein: 2
+      composite: 2.0
+      rated_on: 2026-05-06
+  cajun-shrimp-tacos-with-avocado-cream-sauce-gluten-free-dairy-free-healthy:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.4
+      rated_on: 2026-05-06
+  chicken-and-potatoes:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  chicken-and-potatoes-with-dijon-cream-sauce:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  chicken-carnitas-juicy-amp-crispy-slow-cooker-or-instant-pot:
+    last_used: 2026-05-06
+    ratings:
+      taste: 3
+      is_memorized: false
+      effort: 5
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 3.7
+      rated_on: 2026-05-06
+  chicken-fajita-tortilla-bowls:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  chicken-orzo-tomato-soup:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.8
+      rated_on: 2026-05-06
+  chicken-pot-pie-soup:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  chickpea-pasta-salad-with-creamy-lemon-tahini-dressing:
+    last_used: 2026-05-05
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  chili-garlic-instant-pot-noodles:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 3
+      protein: 4
+      composite: 4.2
+      rated_on: 2026-05-06
+  chipotle-black-bean-roasted-veggie-enchilada-casserole:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 4
+      protein: 2
+      composite: 3.0
+      rated_on: 2026-05-06
+  chopped-thai-inspired-chickpea-salad-with-curry-peanut-dressing:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.2
+      rated_on: 2026-05-06
+  cioppino-recipe-instant-pot-seafood-stew:
+    ratings:
+      effort: 5
+      bang_for_buck: 2
+      hospitality: 4
+      nutrition: 4
+      protein: 5
+      composite: 4.0
+      rated_on: 2026-05-06
+  classic-cucumber-tomato-and-red-onion-salad:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 1
+      composite: 4.2
+      rated_on: 2026-05-06
+  coconut-curry-chicken-crock-pot:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 3
+      protein: 4
+      composite: 4.2
+      rated_on: 2026-05-06
+  coconut-milk-chicken:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  coconut-rice:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      protein: 1
+      composite: 3.6
+      rated_on: 2026-05-06
+  corn-casserole-recipe:
+    ratings:
+      effort: 2
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 2
+      protein: 1
+      composite: 2.8
+      rated_on: 2026-05-06
+  corn-pasta-salad-with-bacon-and-creamy-pesto-dressing:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 3
+      composite: 3.6
+      rated_on: 2026-05-06
+  cottage-cheese-banana-bread:
+    ratings:
+      effort: 2
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 3
+      protein: 2
+      composite: 3.2
+      rated_on: 2026-05-06
+  cottage-cheese-banana-oat-protein-pancake-bites:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 4
+      protein: 3
+      composite: 4.2
+      rated_on: 2026-05-06
+  cottage-cheese-pasta-sauce:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      protein: 3
+      composite: 4.2
+      rated_on: 2026-05-06
+  cozy-white-bean-mushroom-stew-vegan:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 5
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  creamy-butternut-squash-gnocchi-with-sausage-thyme-and-sage:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 2
+      protein: 3
+      composite: 2.8
+      rated_on: 2026-05-06
+  creamy-chicken-pesto-pasta:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  creamy-coconut-lime-chicken:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  creamy-lemon-and-herb-pot-roasted-chicken:
+    ratings:
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  creamy-pasta-with-peas-and-pancetta:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 2
+      protein: 3
+      composite: 3.2
+      rated_on: 2026-05-06
+  creamy-sausage-and-tomato-pasta:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 2
+      protein: 3
+      composite: 3.2
+      rated_on: 2026-05-06
+  creamy-spinach-and-mushroom-gnocchi-one-pan-20-minutes:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 2
+      composite: 3.4
+      rated_on: 2026-05-06
+  creamy-tuscan-chicken-with-spinach-artichokes-and-sun-dried-tomatoes-30-minutes-one-pan:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  creamy-vegan-caramelized-onion-dip:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 3
+      protein: 1
+      composite: 3.2
+      rated_on: 2026-05-06
+  creamy-white-bean-lemon-pesto-orzo-soup:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  crispy-cabbage-pie-with-dill-cream-sauce-your-new-favorite-comfort-food:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 3
+      protein: 1
+      composite: 3.2
+      rated_on: 2026-05-06
+  crispy-chicken-tinga-quesadillas:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  crispy-potato-and-refried-bean-tacos-with-spicy-ranch-dip:
+    ratings:
+      effort: 2
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 3
+      protein: 2
+      composite: 3.2
+      rated_on: 2026-05-06
+  crispy-potato-galette-with-smoked-salmon-cr-me-fra-che:
+    ratings:
+      effort: 1
+      bang_for_buck: 2
+      hospitality: 2
+      nutrition: 3
+      protein: 4
+      composite: 2.4
+      rated_on: 2026-05-06
   crisp-gnocchi-with-sausage-and-peas:
     last_used: 2026-04-27
     ratings:
@@ -9,7 +500,578 @@ recipes:
       bang_for_buck: 4
       hospitality: 5
       nutrition: 2
-      composite: 3.7
+      protein: 3
+      composite: 3.6
+      rated_on: 2026-05-06
+  crock-pot-mojo-pork-with-cuban-style-black-beans:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 5
+      composite: 4.2
+      rated_on: 2026-05-06
+  crockpot-creamy-white-chicken-chili:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 3
+      protein: 4
+      composite: 4.2
+      rated_on: 2026-05-06
+  crustless-cottage-cheese-quiche:
+    ratings:
+      effort: 1
+      bang_for_buck: 5
+      hospitality: 3
+      nutrition: 4
+      protein: 3
+      composite: 3.2
+      rated_on: 2026-05-06
+  cuban-chicken-and-black-bean-quinoa-bowls-with-fried-chili-spiced-bananas-spicy-mangos:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  dairy-free-corn-casserole-recipe:
+    ratings:
+      effort: 1
+      bang_for_buck: 5
+      hospitality: 3
+      nutrition: 2
+      protein: 1
+      composite: 2.4
+      rated_on: 2026-05-06
+  dairy-free-pesto-chicken:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 3.8
+      rated_on: 2026-05-06
+  dutch-oven-pizza:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 2
+      protein: 2
+      composite: 2.6
+      rated_on: 2026-05-06
+  easiest-baked-salmon-with-lemon-tahini-sauce:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 4
+      protein: 5
+      composite: 3.6
+      rated_on: 2026-05-06
+  easy-baked-chicken-and-zucchini-recipe:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 3.8
+      rated_on: 2026-05-06
+  easy-oven-roasted-french-garlic-chicken-video:
+    ratings:
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  easy-salsa-verde-chicken-instant-pot-slow-cooker:
+    last_used: 2026-05-09
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 4
+      protein: 4
+      composite: 4.4
+      rated_on: 2026-05-06
+  fettucinne-alfredo:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 1
+      protein: 2
+      composite: 3.4
+      rated_on: 2026-05-06
+  fish-curry-recipe-instant-pot-fish-saag:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 5
+      protein: 5
+      composite: 4.8
+      rated_on: 2026-05-06
+  french-style-potato-and-green-bean-salad:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 4
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  greek-chicken-tzatziki-bowls:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.4
+      rated_on: 2026-05-06
+  greek-lentil-salad:
+    last_used: 2026-05-08
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.4
+      rated_on: 2026-05-06
+  green-bean-casserole-from-scratch:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 3
+      protein: 1
+      composite: 2.6
+      rated_on: 2026-05-06
+  grilled-chicken-thighs-with-chimichurri:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 4.0
+      rated_on: 2026-05-06
+  grilled-lemon-herb-chicken-avocado-orzo-salad-with-honey-mustard-bacon-dressing:
+    ratings:
+      effort: 3
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  ground-turkey-and-sweet-potato-skillet:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 4.0
+      rated_on: 2026-05-06
+  ground-turkey-zucchini-casserole-healthy-comfort-food:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.4
+      rated_on: 2026-05-06
+  haddock-with-spinach-and-rice:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 5
+      protein: 5
+      composite: 4.8
+      rated_on: 2026-05-06
+  ham-and-cheese-frittata:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  harissa-chickpeas:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.2
+      rated_on: 2026-05-06
+  herb-and-citrus-oven-roasted-chicken:
+    ratings:
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  herby-feta-lemon-chicken-and-veggie-sheet-pan-dinner:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  herby-greek-chicken-meatballs:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  herby-whipped-white-beans-with-smoky-mushrooms:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.2
+      rated_on: 2026-05-06
+  homemade-shepherd-s-pie:
+    ratings:
+      effort: 1
+      bang_for_buck: 3
+      hospitality: 2
+      nutrition: 3
+      protein: 5
+      composite: 2.8
+      rated_on: 2026-05-06
+  honey-chipotle-tacos:
+    last_used: 2026-04-28
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 4
+      protein: 4
+      composite: 4.4
+      rated_on: 2026-05-06
+  honey-sriracha-salmon-bowls:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 4
+      protein: 5
+      composite: 3.6
+      rated_on: 2026-05-06
+  how-to-make-balsamic-glaze:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      protein: 1
+      composite: 3.6
+      rated_on: 2026-05-06
+  ina-garten-carrot-ginger-soup:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 5
+      protein: 1
+      composite: 3.6
+      rated_on: 2026-05-06
+  instant-pot-chicken-meatballs-and-marinara-whole30-paleo-5-minutes:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 4
+      protein: 4
+      composite: 4.4
+      rated_on: 2026-05-06
+  instant-pot-chicken-taco-bowls:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 4
+      protein: 4
+      composite: 4.4
+      rated_on: 2026-05-06
+  instant-pot-creamy-tomato-basil-soup:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      protein: 1
+      composite: 3.8
+      rated_on: 2026-05-06
+  instant-pot-creamy-tuscan-chicken:
+    ratings:
+      effort: 5
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.8
+      rated_on: 2026-05-06
+  japanese-style-risotto-with-seared-salmon:
+    ratings:
+      effort: 3
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 3
+      protein: 5
+      composite: 3.2
+      rated_on: 2026-05-06
+  knock-your-socks-off-crock-pot-soup:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 2
+      protein: 3
+      composite: 3.8
+      rated_on: 2026-05-06
+  leek-mushroom-and-rice-creamy-soup:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 1
+      composite: 3.4
+      rated_on: 2026-05-06
+  lemon-basil-pasta-salad:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 1
+      composite: 3.2
+      rated_on: 2026-05-06
+  lemon-chicken-breast:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 4.0
+      rated_on: 2026-05-06
+  lemon-chicken-gnocchi:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  lemon-garlic-green-tahini-sauce-5-minutes:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 1
+      composite: 4.2
+      rated_on: 2026-05-06
+  lemon-garlic-kale-salad:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 1
+      composite: 4.0
+      rated_on: 2026-05-06
+  lime-chicken-marinade:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 4.0
+      rated_on: 2026-05-06
+  mapo-eggplant:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 3
+      composite: 3.6
+      rated_on: 2026-05-06
+  marry-me-chicken-in-a-sun-dried-tomato-cream-sauce:
+    ratings:
+      effort: 3
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 2
+      protein: 4
+      composite: 2.8
+      rated_on: 2026-05-06
+  mashed-potatoes:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 2
+      protein: 1
+      composite: 3.4
+      rated_on: 2026-05-06
+  mediterranean-baked-fish:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 5
+      protein: 5
+      composite: 4.4
+      rated_on: 2026-05-06
+  mediterranean-bean-salad:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.2
+      rated_on: 2026-05-06
+  mediterranean-bowl-with-salmon:
+    ratings:
+      effort: 3
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 5
+      protein: 5
+      composite: 3.6
+      rated_on: 2026-05-06
+  mediterranean-salmon-in-parchment-paper-recipe:
+    ratings:
+      effort: 3
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 4
+      protein: 5
+      composite: 3.4
+      rated_on: 2026-05-06
+  millionaire-gnocchi-with-red-sauce-herbed-ricotta-and-golden-crispies:
+    ratings:
+      effort: 1
+      bang_for_buck: 3
+      hospitality: 2
+      nutrition: 2
+      protein: 2
+      composite: 2.0
+      rated_on: 2026-05-06
+  miso-butter-roasted-cabbage-wedges-that-everyone-will-love:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 4
+      protein: 1
+      composite: 3.4
+      rated_on: 2026-05-06
+  miso-pasta-sauce-with-cannellini-beans-and-leeks:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  miso-rice-noodle-soup-with-sesame-roasted-sweet-potatoes-broccolini:
+    ratings:
+      effort: 1
+      bang_for_buck: 3
+      hospitality: 2
+      nutrition: 5
+      protein: 3
+      composite: 2.8
+      rated_on: 2026-05-06
+  muffin-tin-chicken-pot-pies:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  nasu-dengaku-miso-glazed-eggplant:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 4
+      protein: 1
+      composite: 4.0
+      rated_on: 2026-05-06
+  one-pan-creamy-lentils-japanese-sweet-potatoes-kale:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 5
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  one-pan-mediterranean-chicken-with-roasted-red-pepper-sauce:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  one-pot-45-minute-coq-au-vin-with-brown-butter-sage-mashed-potatoes:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  one-pot-lemony-pasta-with-sausage-broccoli-rabe-and-burrata:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
       rated_on: 2026-05-06
   orzo-salad:
     last_used: 2026-04-27
@@ -20,34 +1082,604 @@ recipes:
       bang_for_buck: 5
       hospitality: 5
       nutrition: 3
-      composite: 3.8
+      protein: 2
+      composite: 3.6
       rated_on: 2026-05-06
-  honey-chipotle-tacos:
-    last_used: 2026-04-28
-  paprika-chicken-potatoes:
-    last_used: 2026-04-29
-  beef-stew:
-    last_used: 2026-04-30
-  southwest-ground-beef-and-sweet-potato-skillet:
-    last_used: 2026-05-05
-  chickpea-pasta-salad-with-creamy-lemon-tahini-dressing:
-    last_used: 2026-05-05
-  chicken-carnitas-juicy-amp-crispy-slow-cooker-or-instant-pot:
-    last_used: 2026-05-06
+  paleo-breakfast-casserole-whole30:
     ratings:
-      taste: 3
-      is_memorized: false
-      effort: 5
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  pan-seared-cod-in-white-wine-tomato-basil-sauce:
+    ratings:
+      effort: 4
       bang_for_buck: 3
       hospitality: 4
       nutrition: 4
-      composite: 3.7
+      protein: 5
+      composite: 4.0
+      rated_on: 2026-05-06
+  paprika-chicken-potatoes:
+    last_used: 2026-04-29
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  pasta-with-sun-dried-tomato-ricotta-pesto:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 2
+      protein: 2
+      composite: 3.0
+      rated_on: 2026-05-06
+  pioneer-woman-slow-cooker-chicken-thighs:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 3
+      protein: 4
+      composite: 4.2
+      rated_on: 2026-05-06
+  pork-loin-with-wine-and-herb-gravy:
+    ratings:
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 3
+      protein: 5
+      composite: 3.2
       rated_on: 2026-05-06
   pork-tenderloin-with-dijon-cream-sauce:
     last_used: 2026-05-07
-  greek-lentil-salad:
-    last_used: 2026-05-08
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 5
+      composite: 3.4
+      rated_on: 2026-05-06
+  potato-chowder:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 2
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  potato-gnocchi-with-mushroom-cream-sauce-recipe:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 2
+      composite: 3.4
+      rated_on: 2026-05-06
+  potato-salad:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 3
+      protein: 1
+      composite: 3.2
+      rated_on: 2026-05-06
+  prosciutto-apple-and-sage-butter-chicken-with-cider-pan-sauce:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  ranch-chicken-meatballs-with-broccoli-couscous:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  rich-buttery-pistachio-crusted-salmon-recipe:
+    ratings:
+      effort: 3
+      bang_for_buck: 1
+      hospitality: 2
+      nutrition: 3
+      protein: 5
+      composite: 2.8
+      rated_on: 2026-05-06
+  roasted-carrots-with-whipped-ricotta-and-hot-honey:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 1
+      composite: 3.2
+      rated_on: 2026-05-06
+  roasted-cod-with-potatoes-and-lemon:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 4
+      protein: 5
+      composite: 3.6
+      rated_on: 2026-05-06
+  roasted-lemon-chicken-thighs-with-potatoes:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  roasted-potato-quinoa-salad:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 5
+      protein: 2
+      composite: 3.6
+      rated_on: 2026-05-06
+  rosemary-champagne-cocktail-with-blood-orange:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 1
+      protein: 1
+      composite: 3.2
+      rated_on: 2026-05-06
+  salmon-with-artichoke-orzo:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 3
+      protein: 5
+      composite: 3.4
+      rated_on: 2026-05-06
+  sausage-pizza-twice-baked-sweet-potatoes-paleo-amp-whole30:
+    ratings:
+      effort: 1
+      bang_for_buck: 3
+      hospitality: 2
+      nutrition: 3
+      protein: 3
+      composite: 2.4
+      rated_on: 2026-05-06
+  sausage-potato-soup:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 2
+      protein: 3
+      composite: 2.6
+      rated_on: 2026-05-06
+  sheet-pan-cheesy-poblano-corn-enchiladas:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 2
+      composite: 3.2
+      rated_on: 2026-05-06
+  sheet-pan-green-goddess-salmon-with-bacony-brussels-sprouts:
+    ratings:
+      effort: 3
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 4
+      protein: 5
+      composite: 3.4
+      rated_on: 2026-05-06
+  shrimp-rice-bowls-with-spicy-mayo:
+    ratings:
+      effort: 5
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.8
+      rated_on: 2026-05-06
+  skillet-chicken-with-white-beans-and-caramelized-lemon:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 3.8
+      rated_on: 2026-05-06
+  skillet-chicken-zucchini-and-cheesy-rice:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.8
+      rated_on: 2026-05-06
+  skirt-steak-marinade-recipe-with-chimichurri-recipe:
+    ratings:
+      effort: 5
+      bang_for_buck: 2
+      hospitality: 4
+      nutrition: 3
+      protein: 5
+      composite: 3.8
+      rated_on: 2026-05-06
+  slow-cooker-chicken-thighs:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 3
+      protein: 4
+      composite: 4.2
+      rated_on: 2026-05-06
+  slow-cooker-creamy-tomato-basil-chicken:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 3
+      protein: 4
+      composite: 4.2
+      rated_on: 2026-05-06
+  slow-cooker-green-enchilada-chicken-soup:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 4
+      protein: 4
+      composite: 4.4
+      rated_on: 2026-05-06
+  slow-cooker-pepperoncini-beef-aka-drip-beef:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 3
+      protein: 5
+      composite: 4.4
+      rated_on: 2026-05-06
+  slow-cooker-salsa-verde-honey-lime-chicken:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 4
+      protein: 4
+      composite: 4.6
+      rated_on: 2026-05-06
+  slow-roasted-chickpea-and-tomato-pasta:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 4
+      protein: 2
+      composite: 4.0
+      rated_on: 2026-05-06
+  slow-roasted-salmon-with-green-olive-salsa-verde:
+    ratings:
+      effort: 2
+      bang_for_buck: 2
+      hospitality: 2
+      nutrition: 4
+      protein: 5
+      composite: 3.0
+      rated_on: 2026-05-06
+  southwest-ground-beef-and-sweet-potato-skillet:
+    last_used: 2026-05-05
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 5
+      composite: 4.2
+      rated_on: 2026-05-06
+  spanish-potato-soup-with-chorizo:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 2
+      protein: 3
+      composite: 2.8
+      rated_on: 2026-05-06
+  spicy-peanut-noodles-with-cucumber:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      protein: 2
+      composite: 3.8
+      rated_on: 2026-05-06
+  spicy-plantain-burrito-bowls:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 2
+      composite: 3.4
+      rated_on: 2026-05-06
+  spicy-salmon-sushi-bake-recipe:
+    ratings:
+      effort: 2
+      bang_for_buck: 2
+      hospitality: 2
+      nutrition: 3
+      protein: 5
+      composite: 2.8
+      rated_on: 2026-05-06
+  spinach-artichoke-white-bean-soup:
+    ratings:
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 5
+      protein: 2
+      composite: 3.0
+      rated_on: 2026-05-06
+  spinach-mushroom-frittata-recipe:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 4
+      protein: 3
+      composite: 3.8
+      rated_on: 2026-05-06
+  steph-s-chickpea-curry-with-spinach-and-rice:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 4
+      protein: 2
+      composite: 4.0
+      rated_on: 2026-05-06
+  sweet-potato-veggie-burgers-with-avocado:
+    ratings:
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 4
+      protein: 2
+      composite: 2.8
+      rated_on: 2026-05-06
   thai-chicken-meatballs-in-peanut-sauce:
     last_used: 2026-05-08
-  easy-salsa-verde-chicken-instant-pot-slow-cooker:
-    last_used: 2026-05-09
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.2
+      rated_on: 2026-05-06
+  the-best-damn-vegan-biscuits:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 2
+      protein: 1
+      composite: 3.4
+      rated_on: 2026-05-06
+  the-best-ever-greek-chicken-marinade:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 4.0
+      rated_on: 2026-05-06
+  tomato-basil-butter-beans:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.2
+      rated_on: 2026-05-06
+  ultimate-instant-pot-beef-barbacoa:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 5
+      composite: 3.8
+      rated_on: 2026-05-06
+  vegan-biscuits-and-gravy:
+    ratings:
+      effort: 1
+      bang_for_buck: 5
+      hospitality: 3
+      nutrition: 2
+      protein: 1
+      composite: 2.4
+      rated_on: 2026-05-06
+  vegan-black-bean-mushroom-enchiladas:
+    ratings:
+      effort: 1
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 4
+      protein: 2
+      composite: 2.8
+      rated_on: 2026-05-06
+  vegan-instant-pot-white-bean-stew:
+    ratings:
+      effort: 5
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.4
+      rated_on: 2026-05-06
+  vegan-peanut-satay-noodle-soup:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 2
+      composite: 3.4
+      rated_on: 2026-05-06
+  vegan-yachae-jeon-korean-vegetable-pancakes:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 4
+      protein: 1
+      composite: 3.4
+      rated_on: 2026-05-06
+  watermelon-feta-salad:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 4
+      protein: 1
+      composite: 3.8
+      rated_on: 2026-05-06
+  weeknight-30-minute-sticky-ginger-sesame-chicken-meatballs:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 4
+      protein: 4
+      composite: 4.0
+      rated_on: 2026-05-06
+  weeknight-thai-chicken-meatball-khao-soi:
+    ratings:
+      effort: 4
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 3
+      protein: 4
+      composite: 3.6
+      rated_on: 2026-05-06
+  whipped-feta-with-honey-dip:
+    ratings:
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 2
+      protein: 1
+      composite: 3.4
+      rated_on: 2026-05-06
+  white-bean-soup-with-bacon-and-spiced-brown-butter:
+    ratings:
+      effort: 3
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 2
+      protein: 3
+      composite: 3.2
+      rated_on: 2026-05-06
+  white-bean-soup-with-bacon:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 3
+      composite: 3.0
+      rated_on: 2026-05-06
+  white-bean-sun-dried-tomato-gnocchi:
+    ratings:
+      effort: 4
+      bang_for_buck: 4
+      hospitality: 4
+      nutrition: 3
+      protein: 2
+      composite: 3.4
+      rated_on: 2026-05-06
+  white-beans-charred-cabbage-caper-parsley-vinaigrette:
+    ratings:
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 5
+      protein: 2
+      composite: 4.2
+      rated_on: 2026-05-06
+  white-chili:
+    ratings:
+      effort: 2
+      bang_for_buck: 4
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.4
+      rated_on: 2026-05-06
+  whole30-butter-chicken:
+    ratings:
+      effort: 3
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 4
+      protein: 4
+      composite: 3.4
+      rated_on: 2026-05-06
+  whole30-chipotle-beef-amp-avocado-bowls-sofritas-copycat-paleo:
+    ratings:
+      effort: 4
+      bang_for_buck: 2
+      hospitality: 3
+      nutrition: 5
+      protein: 5
+      composite: 3.8
+      rated_on: 2026-05-06
+  whole30-marry-me-chicken:
+    ratings:
+      effort: 2
+      bang_for_buck: 3
+      hospitality: 3
+      nutrition: 3
+      protein: 4
+      composite: 3.0
+      rated_on: 2026-05-06
+  whole30-zucchini-frittata:
+    ratings:
+      effort: 3
+      bang_for_buck: 5
+      hospitality: 4
+      nutrition: 4
+      protein: 3
+      composite: 3.8
+      rated_on: 2026-05-06

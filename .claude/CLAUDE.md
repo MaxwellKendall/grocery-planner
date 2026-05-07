@@ -366,7 +366,8 @@ recipes:
       bang_for_buck: 3            # auto-computed by /score skill
       hospitality: 3              # derived: round((effort + bang_for_buck) / 2) — time + affordability for hosting
       nutrition: 4                # auto-computed by /score skill — dietary quality (1=heavy fat/sugar/cheese, 5=whole foods/veg/lean)
-      composite: 4.2              # (taste×2 + effort + bfb + hospitality + nutrition) / 6
+      protein: 4                  # auto-computed by /score skill — animal protein yield (1=veggie-only, 5=meat/fish/eggs >30g/serving)
+      composite: 4.2              # with taste: (taste×2 + effort + bfb + hosp + nutr + protein) / 7; without: (effort + bfb + hosp + nutr + protein) / 5
       rated_on: YYYY-MM-DD
       notes: "..."                # optional free-text
   sheet-pan-salmon:
@@ -376,7 +377,7 @@ recipes:
 Keys are the recipe filename stem (e.g. `chicken-tacos` for `recipes/chicken-tacos.md`).
 Never delete entries. A recipe can have ratings without a `last_used` date (rated
 before first use). `taste` and `is_memorized` are user-provided. `taste` may be omitted — computed
-scores are stored regardless. `composite` is only present when `taste` is set.
+scores are stored regardless. `composite` is always computed — using all 5 dimensions when `taste` is set, or the 4 auto-scores alone when it is not.
 All other scores are auto-computed by the `/score` skill. Update `last_used`
 during PLAN mode; update `ratings` during RATE mode or `/score`.
 

@@ -99,13 +99,34 @@ refined ingredients:
 
 Use culinary knowledge to estimate from the ingredient list. Flag as estimated.
 
+**Protein score (1–5, auto-computed from ingredients)**
+
+Assess animal protein content and yield per serving. Plant protein scores lower than
+animal protein — this household prioritizes meat/fish/eggs for muscle and satiety goals.
+
+| Description | Score |
+|---|---|
+| Meat/fish/eggs as primary component, >30g protein/serving | 5 |
+| Good animal protein — poultry, shrimp, lean cuts, ~20–30g/serving | 4 |
+| Moderate animal protein, OR legume-forward with decent yield (~10–20g) | 3 |
+| Legume/plant protein only, or low overall protein (<10g) | 2 |
+| Vegetable-only, minimal protein of any kind | 1 |
+
+Use culinary knowledge to estimate from the ingredient list.
+
 **Composite score**
 
+Always computed — taste optional:
+
 ```
-composite = round((taste × 2 + effort + bang_for_buck + hospitality + nutrition) / 6, 1)
+# with taste
+composite = round((taste × 2 + effort + bang_for_buck + hospitality + nutrition + protein) / 7, 1)
+
+# without taste
+composite = round((effort + bang_for_buck + hospitality + nutrition + protein) / 5, 1)
 ```
 
-Taste is weighted 2× because it is the only human-input signal. Range: 1.0–5.0.
+When taste is present it is weighted 2× as the only human-input signal. Range: 1.0–5.0.
 
 ### 4. Ask for user-provided fields only if missing
 
@@ -117,9 +138,8 @@ Taste is weighted 2× because it is the only human-input signal. Range: 1.0–5.
 - Both present → skip prompting entirely
 
 `taste` may be omitted or nulled out — say "skip" or "null" to leave it unset.
-The computed scores (effort, bang_for_buck, hospitality) are still stored and
-useful for planning even without a taste verdict. `composite` is only computed
-when `taste` is present.
+Composite is always computed: using all 6 dimensions when taste is present, or
+the 5 auto-scores alone when taste is absent.
 
 If the user supplies taste or is_memorized as part of the invocation
 (e.g., `/score chicken-carnitas taste=5 memorized=yes`), use those values directly
@@ -142,6 +162,7 @@ effort:        X/5  — [e.g. "10min hands-on (passive: IP)"]
 bang_for_buck: X/5  — ~$X.XX/serving [estimated / from frontmatter]
 hospitality:   X/5  — round((X + X) / 2)
 nutrition:     X/5  — [e.g. "lean protein + veg" or "cream/cheese-heavy"]
+protein:       X/5  — [e.g. "chicken thighs ~28g/serving" or "veggie-only"]
 composite:     X.X/5
 ```
 
