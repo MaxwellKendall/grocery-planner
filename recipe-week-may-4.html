@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Recipes — May 4</title>
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --border: #e6e2dc;
+      --text: #1c1917;
+      --muted: #78716c;
+      --accent: #b45309;
+      --accent-light: #fef3c7;
+      --accent-border: #fde68a;
+      --done-text: #a8a29e;
+      --done-bg: #f5f5f4;
+      --green: #15803d;
+      --radius: 14px;
+      --nav-h: 58px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.5;
+      padding-bottom: 48px;
+    }
+
+    /* ── Navigation ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-scroll {
+      display: flex;
+      gap: 8px;
+      padding: 0 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      width: 100%;
+    }
+    .nav-scroll::-webkit-scrollbar { display: none; }
+
+    .nav-pill {
+      flex-shrink: 0;
+      padding: 7px 15px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+    .nav-pill:active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Week Header ── */
+    .week-header {
+      padding: 22px 16px 10px;
+    }
+    .week-header h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .week-header p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 3px;
+    }
+
+    /* ── Recipe Card ── */
+    .recipe {
+      margin: 14px 12px 0;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .recipe-header {
+      padding: 16px 16px 14px;
+    }
+
+    .recipe-day-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-bottom: 8px;
+    }
+
+    .recipe-name {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .recipe-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .meta-chip {
+      font-size: 13px;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* ── Section Label ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      padding: 12px 16px 6px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Ingredients ── */
+    .ingredient {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.1s;
+    }
+    .ingredient:last-child { border-bottom: none; }
+    .ingredient:active { background: var(--bg); }
+
+    .ingredient.checked .ingredient-text {
+      text-decoration: line-through;
+      color: var(--done-text);
+    }
+
+    .check-box {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border: 2px solid var(--border);
+      border-radius: 7px;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.12s, border-color 0.12s;
+    }
+    .ingredient.checked .check-box {
+      background: var(--green);
+      border-color: var(--green);
+    }
+    .check-icon { display: none; }
+    .ingredient.checked .check-icon { display: block; }
+
+    .ingredient-text {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.45;
+      transition: color 0.12s;
+    }
+
+    /* ── Steps ── */
+    .step {
+      display: flex;
+      gap: 13px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+      transition: opacity 0.15s;
+    }
+    .step:last-child { border-bottom: none; }
+    .step:active { background: var(--bg); }
+
+    .step.checked {
+      opacity: 0.35;
+    }
+
+    .step-num {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      transition: background 0.12s;
+      flex-shrink: 0;
+    }
+    .step.checked .step-num {
+      background: var(--done-text);
+    }
+
+    .step-text {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .step-note {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 4px;
+      padding: 1px 6px;
+      margin-bottom: 3px;
+    }
+
+    /* ── Reset button ── */
+    .reset-wrap {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+    }
+    .reset-btn {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      border: 1px solid var(--border);
+      background: transparent;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .reset-btn:active { background: var(--bg); }
+
+    /* ── Plan Notes ── */
+    .notes-section {
+      margin: 14px 12px 0;
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .notes-section h2 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .notes-section ul {
+      padding-left: 18px;
+      list-style: disc;
+    }
+    .notes-section li {
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 7px;
+      line-height: 1.4;
+    }
+    .notes-section li:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Recipes">
+  <div class="nav-scroll">
+    <a class="nav-pill" href="#monday">Mon — Skillet</a>
+    <a class="nav-pill" href="#tuesday">Tue — Carnitas</a>
+    <a class="nav-pill" href="#wednesday">Wed — Pork</a>
+    <a class="nav-pill" href="#thursday">Thu — Meatballs</a>
+    <a class="nav-pill" href="#friday">Fri — Salsa Verde</a>
+  </div>
+</nav>
+
+<div class="week-header">
+  <h1>Week of May 4</h1>
+  <p>Tap ingredients &amp; steps to check off as you cook</p>
+</div>
+
+<!-- ─────────────────────────────────────────
+     MONDAY — Southwest Ground Beef Skillet
+────────────────────────────────────────── -->
+<section class="recipe" id="monday">
+  <div class="recipe-header">
+    <div class="recipe-day-tag">Monday Dinner</div>
+    <div class="recipe-name">Southwest Ground Beef &amp; Sweet Potato Skillet</div>
+    <div class="recipe-meta">
+      <span class="meta-chip">4 servings</span>
+      <span class="meta-chip">Prep 5 min</span>
+      <span class="meta-chip">Cook 25 min</span>
+      <span class="meta-chip">~$3.00/serving</span>
+      <span class="meta-chip">~32g protein</span>
+    </div>
+  </div>
+
+  <div class="section-label">Ingredients</div>
+
+  <div class="ingredient" data-id="mon-i-0">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tbsp olive oil</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-1">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">½ cup diced onion</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-2">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 lb lean ground beef</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-3">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">5 tsp chili powder, divided (3 tsp + 2 tsp)</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-4">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tsp ground cumin, divided (1 tsp + 1 tsp)</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-5">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Kosher salt and black pepper, to taste</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-6">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp grated garlic</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-7">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 cups peeled and diced sweet potatoes</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-8">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">14.5 oz can fire roasted diced tomatoes</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-9">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">4 oz canned diced green chiles</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-10">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">¼ cup water</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-11">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">½ cup shredded cheddar cheese</div>
+  </div>
+  <div class="ingredient" data-id="mon-i-12">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Cilantro for garnish (optional)</div>
+  </div>
+
+  <div class="section-label">Instructions</div>
+  <div class="steps-list">
+    <div class="step" data-id="mon-s-0">
+      <div class="step-num">1</div>
+      <div class="step-text">Heat oil in large skillet over medium-high. Add ground beef and onion, crumble as it cooks. Season with 3 tsp chili powder, 1 tsp cumin, salt and pepper. When nearly cooked through, add garlic and cook 1 more minute. Remove to a plate and wipe out skillet.</div>
+    </div>
+    <div class="step" data-id="mon-s-1">
+      <div class="step-num">2</div>
+      <div class="step-text">Add diced sweet potato, fire roasted tomatoes, green chiles, water, 2 tsp chili powder, 1 tsp cumin, salt and pepper to the skillet. Stir together, cover with lid, reduce heat, and simmer about 20 minutes until sweet potatoes are tender.</div>
+    </div>
+    <div class="step" data-id="mon-s-2">
+      <div class="step-num">3</div>
+      <div class="step-text">Add beef mixture back in and stir together. Top with shredded cheddar, cover again for 1 minute until cheese melts. Garnish with cilantro and serve.</div>
+    </div>
+  </div>
+
+  <div class="reset-wrap">
+    <button class="reset-btn" data-recipe="monday">Reset checks</button>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     TUESDAY — Chicken Carnitas
+────────────────────────────────────────── -->
+<section class="recipe" id="tuesday">
+  <div class="recipe-header">
+    <div class="recipe-day-tag">Tuesday Dinner</div>
+    <div class="recipe-name">Chicken Carnitas — Juicy &amp; Crispy</div>
+    <div class="recipe-meta">
+      <span class="meta-chip">6 servings</span>
+      <span class="meta-chip">Prep 10 min</span>
+      <span class="meta-chip">IP: 25 min · SC: 4–10 hr</span>
+      <span class="meta-chip">~$2.25/serving</span>
+      <span class="meta-chip">~38g protein</span>
+    </div>
+  </div>
+
+  <div class="section-label">Ingredients — Chicken</div>
+  <div class="ingredient" data-id="tue-i-0">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">4 lbs boneless skinless chicken thighs</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-1">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">6 cloves garlic, peeled and smashed</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-2">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">¾ cup fresh orange juice (~2 oranges)</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-3">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">¼ cup fresh lime juice (~2 limes)</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-4">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tbsp cumin</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-5">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tbsp chili powder</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-6">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tsp oregano (fresh or dried)</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-7">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tsp salt</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-8">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp chipotle powder</div>
+  </div>
+
+  <div class="section-label">Toppings (to serve)</div>
+  <div class="ingredient" data-id="tue-i-9">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Romaine lettuce leaves or tortillas</div>
+  </div>
+  <div class="ingredient" data-id="tue-i-10">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Sliced avocado, cilantro, jalapeños, lime wedges</div>
+  </div>
+
+  <div class="section-label">Instructions</div>
+  <div class="steps-list">
+    <div class="step" data-id="tue-s-0">
+      <div class="step-num">1</div>
+      <div class="step-text">Combine orange juice, lime juice, cumin, chili powder, oregano, salt, and chipotle powder in a bowl. Mix well.</div>
+    </div>
+    <div class="step" data-id="tue-s-1">
+      <div class="step-num">2</div>
+      <div class="step-text">Place chicken and smashed garlic in Instant Pot or slow cooker. Pour marinade over and toss to coat.</div>
+    </div>
+    <div class="step" data-id="tue-s-2">
+      <div class="step-num">3</div>
+      <div class="step-text"><span class="step-note">Instant Pot</span><br>Seal lid and pressure valve. Cook on high pressure for 25 minutes. When done, quick release pressure manually.<br><br><span class="step-note">Slow Cooker</span><br>Cover and cook on low 8–10 hours or high 4–5 hours.</div>
+    </div>
+    <div class="step" data-id="tue-s-3">
+      <div class="step-num">4</div>
+      <div class="step-text">Remove chicken and shred with two forks. Reserve the cooking juices.</div>
+    </div>
+    <div class="step" data-id="tue-s-4">
+      <div class="step-num">5</div>
+      <div class="step-text"><span class="step-note">For crispy edges</span><br>Set oven to broil. Spread shredded chicken on a sheet pan and spoon cooking juices over the top. Broil 7–10 minutes, flipping halfway, until edges are browned and crispy. Watch closely.</div>
+    </div>
+    <div class="step" data-id="tue-s-5">
+      <div class="step-num">6</div>
+      <div class="step-text">Serve in bowls, lettuce leaves, or tortillas with toppings.</div>
+    </div>
+  </div>
+
+  <div class="reset-wrap">
+    <button class="reset-btn" data-recipe="tuesday">Reset checks</button>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     WEDNESDAY — Pork Tenderloin with Dijon Cream Sauce
+────────────────────────────────────────── -->
+<section class="recipe" id="wednesday">
+  <div class="recipe-header">
+    <div class="recipe-day-tag">Wednesday Dinner</div>
+    <div class="recipe-name">Pork Tenderloin with Dijon Cream Sauce</div>
+    <div class="recipe-meta">
+      <span class="meta-chip">4 servings</span>
+      <span class="meta-chip">Prep 15 min</span>
+      <span class="meta-chip">Cook 30 min</span>
+      <span class="meta-chip">~$3.25/serving</span>
+      <span class="meta-chip">~30g protein</span>
+    </div>
+  </div>
+
+  <div class="section-label">Ingredients</div>
+  <div class="ingredient" data-id="wed-i-0">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1.5 lbs pork tenderloin</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-1">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tsp salt</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-2">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp black pepper</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-3">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tbsp olive oil</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-4">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 shallots, finely chopped</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-5">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">3 tbsp Dijon mustard</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-6">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 cup heavy cream</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-7">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 cup low-sodium chicken broth</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-8">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp fresh thyme leaves</div>
+  </div>
+  <div class="ingredient" data-id="wed-i-9">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Yukon gold potatoes (on hand, to serve)</div>
+  </div>
+
+  <div class="section-label">Instructions</div>
+  <div class="steps-list">
+    <div class="step" data-id="wed-s-0">
+      <div class="step-num">1</div>
+      <div class="step-text">Preheat oven to 400°F. Start potatoes if serving alongside (boil or roast separately).</div>
+    </div>
+    <div class="step" data-id="wed-s-1">
+      <div class="step-num">2</div>
+      <div class="step-text">Pat pork tenderloin completely dry. Season generously all over with salt and pepper.</div>
+    </div>
+    <div class="step" data-id="wed-s-2">
+      <div class="step-num">3</div>
+      <div class="step-text">Heat olive oil in an oven-safe skillet over medium-high. Sear pork on all sides until golden brown, about 3–4 minutes per side. Remove pork and set aside.</div>
+    </div>
+    <div class="step" data-id="wed-s-3">
+      <div class="step-num">4</div>
+      <div class="step-text">In the same skillet, sauté shallots until softened. Stir in Dijon mustard and cook 1 minute.</div>
+    </div>
+    <div class="step" data-id="wed-s-4">
+      <div class="step-num">5</div>
+      <div class="step-text">Pour in chicken broth and heavy cream. Add thyme. Stir to combine into a sauce.</div>
+    </div>
+    <div class="step" data-id="wed-s-5">
+      <div class="step-num">6</div>
+      <div class="step-text">Return pork to the skillet and spoon sauce over it. Transfer to oven and bake 20–25 minutes, until internal temperature reaches 145°F.</div>
+    </div>
+    <div class="step" data-id="wed-s-6">
+      <div class="step-num">7</div>
+      <div class="step-text">Rest 5 minutes before slicing. Serve with sauce spooned over top and potatoes alongside.</div>
+    </div>
+  </div>
+
+  <div class="reset-wrap">
+    <button class="reset-btn" data-recipe="wednesday">Reset checks</button>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     THURSDAY — Thai Chicken Meatballs
+────────────────────────────────────────── -->
+<section class="recipe" id="thursday">
+  <div class="recipe-header">
+    <div class="recipe-day-tag">Thursday Dinner</div>
+    <div class="recipe-name">Thai Chicken Meatballs in Peanut Sauce</div>
+    <div class="recipe-meta">
+      <span class="meta-chip">4 servings</span>
+      <span class="meta-chip">Prep 10 min</span>
+      <span class="meta-chip">Cook 30 min</span>
+      <span class="meta-chip">~$3.25/serving</span>
+      <span class="meta-chip">~30g protein</span>
+    </div>
+  </div>
+
+  <div class="section-label">Ingredients — Meatballs</div>
+  <div class="ingredient" data-id="thu-i-0">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1.1 lbs ground chicken</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-1">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp grated ginger</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-2">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp grated garlic</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-3">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp low-sodium soy sauce</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-4">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">½ tsp sambal oelek (or chili paste)</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-5">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 egg yolk</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-6">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tbsp cornstarch</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-7">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tbsp chopped cilantro</div>
+  </div>
+
+  <div class="section-label">Ingredients — Peanut Sauce &amp; Pan</div>
+  <div class="ingredient" data-id="thu-i-8">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tbsp vegetable oil + 1 tbsp unsalted butter</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-9">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">5 cloves garlic, grated</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-10">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tbsp grated ginger</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-11">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 bok choy, chopped</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-12">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tbsp Thai red curry paste</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-13">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp sambal oelek</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-14">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">½ cup chicken broth (plus more if needed)</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-15">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 can (14 oz) full-fat unsweetened coconut milk</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-16">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">½ cup peanut butter</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-17">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp honey</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-18">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tbsp low-sodium soy sauce</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-19">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tbsp fish sauce</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-20">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Juice of ½ lime</div>
+  </div>
+
+  <div class="section-label">Ingredients — Coconut Rice</div>
+  <div class="ingredient" data-id="thu-i-21">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 cup unsweetened coconut milk</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-22">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 cup chicken broth</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-23">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 cup jasmine rice</div>
+  </div>
+  <div class="ingredient" data-id="thu-i-24">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Toppings: toasted peanuts, fried onions, chives, cilantro, chili pepper</div>
+  </div>
+
+  <div class="section-label">Instructions</div>
+  <div class="steps-list">
+    <div class="step" data-id="thu-s-0">
+      <div class="step-num">1</div>
+      <div class="step-text">Do all your prep first: chop cilantro and bok choy, grate garlic and ginger for both meatballs and sauce.</div>
+    </div>
+    <div class="step" data-id="thu-s-1">
+      <div class="step-num">2</div>
+      <div class="step-text">Combine ground chicken with meatball ingredients (ginger, garlic, soy sauce, sambal, egg yolk, cornstarch, cilantro). Mix just until combined. Roll into 2-tablespoon sized balls.</div>
+    </div>
+    <div class="step" data-id="thu-s-2">
+      <div class="step-num">3</div>
+      <div class="step-text">Heat oil and butter in a nonstick skillet over medium. Brown meatballs all over, about 3 minutes. Remove to a clean plate.</div>
+    </div>
+    <div class="step" data-id="thu-s-3">
+      <div class="step-num">4</div>
+      <div class="step-text">In the same skillet, add sauce garlic and ginger, cook 1 minute. Add bok choy, cook 1 more minute. Stir in red curry paste and sambal. Deglaze with ½ cup chicken broth, simmer 2 minutes, scraping up browned bits.</div>
+    </div>
+    <div class="step" data-id="thu-s-4">
+      <div class="step-num">5</div>
+      <div class="step-text">Add coconut milk and stir in peanut butter. Add honey, lime juice, soy sauce, and fish sauce. Return meatballs to skillet. Simmer 15 minutes (add broth if needed to thin sauce).</div>
+    </div>
+    <div class="step" data-id="thu-s-5">
+      <div class="step-num">6</div>
+      <div class="step-text"><span class="step-note">Coconut rice (start while meatballs simmer)</span><br>Bring 1 cup coconut milk + 1 cup chicken broth to a simmer. Add rice, cover, cook on low 10 minutes stirring occasionally. Remove from heat and rest covered for 10 more minutes. Fluff with fork.</div>
+    </div>
+    <div class="step" data-id="thu-s-6">
+      <div class="step-num">7</div>
+      <div class="step-text">Serve meatballs and peanut sauce over rice with toppings.</div>
+    </div>
+  </div>
+
+  <div class="reset-wrap">
+    <button class="reset-btn" data-recipe="thursday">Reset checks</button>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     FRIDAY — Easy Salsa Verde Chicken
+────────────────────────────────────────── -->
+<section class="recipe" id="friday">
+  <div class="recipe-header">
+    <div class="recipe-day-tag">Friday Dinner</div>
+    <div class="recipe-name">Easy Salsa Verde Chicken (Instant Pot)</div>
+    <div class="recipe-meta">
+      <span class="meta-chip">8 servings</span>
+      <span class="meta-chip">Prep 5 min</span>
+      <span class="meta-chip">Cook 35 min</span>
+      <span class="meta-chip">~$3.00/serving</span>
+      <span class="meta-chip">~38g protein</span>
+    </div>
+  </div>
+
+  <div class="section-label">Ingredients</div>
+  <div class="ingredient" data-id="fri-i-0">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 lbs boneless skinless chicken breasts and/or thighs</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-1">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Kosher salt and black pepper</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-2">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1¾ cups salsa verde (one 16 oz jar)</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-3">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">4 cloves garlic, chopped</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-4">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 jalapeño, stemmed, seeded and chopped</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-5">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tsp ground cumin</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-6">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">2 tsp dried Mexican oregano</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-7">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tsp onion powder</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-8">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">4 scallions, sliced</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-9">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 small bunch cilantro, finely chopped</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-10">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">1 tbsp honey (optional)</div>
+  </div>
+  <div class="ingredient" data-id="fri-i-11">
+    <div class="check-box"><svg class="check-icon" width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M1.5 5L5 8.5L11.5 1.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ingredient-text">Serve with: rice or tortillas, Greek yogurt/sour cream, diced avocado, pepitas, lime wedges</div>
+  </div>
+
+  <div class="section-label">Instructions</div>
+  <div class="steps-list">
+    <div class="step" data-id="fri-s-0">
+      <div class="step-num">1</div>
+      <div class="step-text">Pound chicken breasts to an even ½-inch thickness (cover with plastic wrap and use a rolling pin or tenderizer). Season with ¼ tsp salt and ½ tsp pepper.</div>
+    </div>
+    <div class="step" data-id="fri-s-1">
+      <div class="step-num">2</div>
+      <div class="step-text">Add chicken to Instant Pot with salsa verde, garlic, jalapeño, cumin, oregano, and onion powder. Stir to combine. Close and lock lid, seal pressure valve.</div>
+    </div>
+    <div class="step" data-id="fri-s-2">
+      <div class="step-num">3</div>
+      <div class="step-text">Cook on high pressure for 8 minutes. Allow natural pressure release for 10 minutes, then flip valve to quick-release remaining pressure. Carefully unlock lid.</div>
+    </div>
+    <div class="step" data-id="fri-s-3">
+      <div class="step-num">4</div>
+      <div class="step-text">Shred chicken with two forks into bite-sized pieces directly in the pot.</div>
+    </div>
+    <div class="step" data-id="fri-s-4">
+      <div class="step-num">5</div>
+      <div class="step-text">Stir in scallions, cilantro, and honey. Season to taste with salt.</div>
+    </div>
+    <div class="step" data-id="fri-s-5">
+      <div class="step-num">6</div>
+      <div class="step-text">Serve over rice or in tortillas with toppings.</div>
+    </div>
+  </div>
+
+  <div class="reset-wrap">
+    <button class="reset-btn" data-recipe="friday">Reset checks</button>
+  </div>
+</section>
+
+
+<!-- ── Plan Notes ── -->
+<div class="notes-section">
+  <h2>Plan Notes</h2>
+  <ul>
+    <li>Tuesday: tortillas, sour cream, and avocado are on hand for carnitas bowls.</li>
+    <li>Wednesday: leftover carnitas over rice for lunch before pork tenderloin at dinner.</li>
+    <li>Friday: salsa verde chicken makes 8 servings — lunch on Saturday is covered.</li>
+    <li>Thursday pork tenderloin leftovers → Friday lunch bowls.</li>
+    <li>Estimated weekly protein avg: ~56g/day per adult · May MTD: $189 of $800 spent.</li>
+  </ul>
+</div>
+
+
+<script>
+  document.querySelectorAll('.ingredient').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('checked');
+      saveState();
+    });
+  });
+
+  document.querySelectorAll('.step').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('checked');
+      saveState();
+    });
+  });
+
+  document.querySelectorAll('.reset-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const recipe = btn.closest('.recipe');
+      recipe.querySelectorAll('.ingredient, .step').forEach(el => el.classList.remove('checked'));
+      saveState();
+    });
+  });
+
+  function saveState() {
+    const state = {};
+    document.querySelectorAll('[data-id]').forEach(el => {
+      if (el.classList.contains('checked')) state[el.dataset.id] = true;
+    });
+    try { localStorage.setItem('grocery-plan-may4', JSON.stringify(state)); } catch(_) {}
+  }
+
+  function loadState() {
+    try {
+      const state = JSON.parse(localStorage.getItem('grocery-plan-may4') || '{}');
+      document.querySelectorAll('[data-id]').forEach(el => {
+        if (state[el.dataset.id]) el.classList.add('checked');
+      });
+    } catch(_) {}
+  }
+
+  loadState();
+</script>
+</body>
+</html>

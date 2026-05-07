@@ -1,4 +1,4 @@
-last_updated: 2026-05-01
+last_updated: 2026-05-02
 
 staples:
   olive oil:
@@ -110,10 +110,6 @@ current_stock:
     expires: null
 
   # Meat
-  ground beef:
-    quantity: "~1 package"
-    note: "80/20; weight unclear from receipt"
-    expires: null
   chicken breast:
     quantity: "0.84 lb"
     brand: "Smart brand boneless skinless"

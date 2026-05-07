@@ -103,10 +103,29 @@ Steps:
 1. Read `config.yaml` — household size, dietary requirements, goals, meal cadence,
    pantry staples, budget targets, and `favorite_recipes`. Read all files in
    `recipes/` to discover the available recipe library.
-2. Read `recent-recipes.yaml` — apply cooldown rules before selecting any recipe:
-   - Regular recipes: do not repeat within **21 days** of last use
-   - Recipes listed in `config.yaml` `favorite_recipes`: do not repeat within **10 days**
+2. Read `recent-recipes.yaml` — apply taste-driven cooldown, then select by tier.
+   `config.yaml` `favorite_recipes` is superseded by taste ratings and ignored.
+
+   Cooldown (by taste score — never select a recipe inside its window):
+   - taste = 5: 10 days
+   - taste = 4: 14 days
+   - taste = 3 or unrated: 21 days
+   - taste <= 2: 35 days
    - Recipes with no entry (never used) are always available
+
+   Rating tiers (cooldown-eligible recipes only):
+   - Tier A (taste >= 4): target ~60% of meal slots from this tier when available
+   - Tier B (unrated or taste = 3): fill remaining slots
+   - Tier C (taste <= 2): last resort; flag in plan Notes section
+   - Unrated recipes default to Tier B / 21-day cooldown
+
+   Special cases:
+   - `is_memorized` recipes preferred for `low_effort_nights` (per profile.yaml)
+   - Hospitality meals (weekend guest slot or user requests one): prefer
+     hospitality >= 3; if none are cooldown-eligible, surface top options and ask
+     the user to override the cooldown for that slot
+   - Budget-tight months (within 10% of monthly_grocery_target): use bang_for_buck
+     as a tiebreaker within a tier (prefer >= 4)
 3. Read `profile.yaml` — honor stated preferences and learned patterns
    (e.g. "simple meals on Wednesdays")
 4. Generate a meal plan covering the requested horizon. Default to weekly.
@@ -247,6 +266,44 @@ Reconciliation summary format:
 
 ---
 
+## Mode: RATE
+
+Triggered by: "rate some recipes", "let's rate recipes", "rate last week's meals",
+"how do we feel about [recipe]"
+
+Steps:
+1. Read `recent-recipes.yaml` and recent plan files in `plans/`. Build a candidate
+   list prioritized as:
+   a. Recipes used in the last 14 days with no ratings block (freshest memory)
+   b. Recipes used 15–45 days ago with no ratings block
+   c. Recipes with `rated_on` older than 90 days (stale — worth refreshing)
+   If the user names a specific recipe, redirect to the `/score` skill instead.
+
+2. For each candidate, read the recipe file and auto-compute effort, bang_for_buck,
+   hospitality, and composite using the same logic as the `/score` skill.
+
+3. Ask the user for two things per recipe: `taste` (1–5) and `is_memorized`
+   (yes/no). Show computed scores for context. Accept optional notes.
+
+   Format per recipe:
+   ```
+   [Recipe Name] (used YYYY-MM-DD)
+   Effort: X | Bang-for-buck: X | Hospitality: X (computed)
+   Taste (1–5, or skip)? Memorized? (yes/no) Notes?
+   ```
+
+4. Accept terse input: `4 yes` or `4` (`is_memorized` defaults to false if
+   omitted). `skip` or `null` for taste leaves it unset — computed scores are
+   still stored. `skip` with no other input skips the recipe entirely without
+   writing anything. Confirm interpretation before recording.
+
+5. After the session ends (user says "done" or natural stopping point), write all
+   new and updated ratings to `recent-recipes.yaml` in one atomic update.
+   Regenerate `recipe-index.md`. Show a summary of every recipe rated with the
+   full score set.
+
+---
+
 ## prices.json Schema
 
 ```json
@@ -302,13 +359,26 @@ last_updated: YYYY-MM-DD
 recipes:
   chicken-tacos:                  # filename stem, no path or extension
     last_used: YYYY-MM-DD
+    ratings:
+      taste: 5                    # user-provided: 1 (disliked) → 5 (family favorite)
+      is_memorized: false         # user-provided: true if household knows it by heart
+      effort: 4                   # auto-computed by /score skill
+      bang_for_buck: 3            # auto-computed by /score skill
+      hospitality: 3              # derived: round((effort + bang_for_buck) / 2) — time + affordability for hosting
+      nutrition: 4                # auto-computed by /score skill — dietary quality (1=heavy fat/sugar/cheese, 5=whole foods/veg/lean)
+      composite: 4.2              # (taste×2 + effort + bfb + hospitality + nutrition) / 6
+      rated_on: YYYY-MM-DD
+      notes: "..."                # optional free-text
   sheet-pan-salmon:
-    last_used: YYYY-MM-DD
+    last_used: YYYY-MM-DD         # no ratings block = unrated, treated as Tier B
 ```
 
 Keys are the recipe filename stem (e.g. `chicken-tacos` for `recipes/chicken-tacos.md`).
-Only update `last_used` — never delete entries. If a recipe has no entry it is
-treated as never used and is always available.
+Never delete entries. A recipe can have ratings without a `last_used` date (rated
+before first use). `taste` and `is_memorized` are user-provided. `taste` may be omitted — computed
+scores are stored regardless. `composite` is only present when `taste` is set.
+All other scores are auto-computed by the `/score` skill. Update `last_used`
+during PLAN mode; update `ratings` during RATE mode or `/score`.
 
 ---
 

@@ -1,12 +1,53 @@
-last_updated: 2026-04-27
+last_updated: 2026-05-06
 recipes:
   crisp-gnocchi-with-sausage-and-peas:
     last_used: 2026-04-27
+    ratings:
+      taste: 3
+      is_memorized: true
+      effort: 5
+      bang_for_buck: 4
+      hospitality: 5
+      nutrition: 2
+      composite: 3.7
+      rated_on: 2026-05-06
   orzo-salad:
     last_used: 2026-04-27
+    ratings:
+      taste: 3
+      is_memorized: false
+      effort: 4
+      bang_for_buck: 5
+      hospitality: 5
+      nutrition: 3
+      composite: 3.8
+      rated_on: 2026-05-06
   honey-chipotle-tacos:
     last_used: 2026-04-28
   paprika-chicken-potatoes:
     last_used: 2026-04-29
   beef-stew:
     last_used: 2026-04-30
+  southwest-ground-beef-and-sweet-potato-skillet:
+    last_used: 2026-05-05
+  chickpea-pasta-salad-with-creamy-lemon-tahini-dressing:
+    last_used: 2026-05-05
+  chicken-carnitas-juicy-amp-crispy-slow-cooker-or-instant-pot:
+    last_used: 2026-05-06
+    ratings:
+      taste: 3
+      is_memorized: false
+      effort: 5
+      bang_for_buck: 3
+      hospitality: 4
+      nutrition: 4
+      composite: 3.7
+      rated_on: 2026-05-06
+  pork-tenderloin-with-dijon-cream-sauce:
+    last_used: 2026-05-07
+  greek-lentil-salad:
+    last_used: 2026-05-08
+  thai-chicken-meatballs-in-peanut-sauce:
+    last_used: 2026-05-08
+  easy-salsa-verde-chicken-instant-pot-slow-cooker:
+    last_used: 2026-05-09
