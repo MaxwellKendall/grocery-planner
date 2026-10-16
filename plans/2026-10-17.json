@@ -1,0 +1,109 @@
+{
+  "title": "Rest of October: meals & grocery trips",
+  "short_title": "Rest of October Meals",
+  "subtitle": "Oct 17–31 · family of 4 · lactose-free, high-protein, chicken & turkey · no cooking on Sundays",
+  "note": "Groceries come out of the same spending money as eating out, coffee, gas and shopping. Keeping these trips near the estimates is what leaves room for everything else.",
+  "trips": [
+    {
+      "date": "2026-10-17",
+      "store": "Harris Teeter",
+      "estimate": 150,
+      "estimate_note": "incl. Sunday guests",
+      "meals": [
+        {"date": "2026-10-17", "label": "Sat 17", "meal": "Salsa verde honey-lime chicken wraps", "tags": [["cook", "slow cooker, start by noon · make extra"]]},
+        {"date": "2026-10-18", "label": "Sun 18 lunch", "meal": "Burrito-bowl bar for 6 adults + 2 kids: salsa verde chicken, rice, black beans, homemade salsa, cucumber-tomato salad, guacamole, chips", "tags": [["rest", "Sabbath · all made Saturday, just reheat"]]},
+        {"date": "2026-10-18", "label": "Sun 18", "meal": "Burrito-bowl leftovers", "tags": [["rest", "no cooking"]]},
+        {"date": "2026-10-19", "label": "Mon 19", "meal": "Instant Pot chicken meatballs & marinara over pasta", "tags": [["cook", "Instant Pot"]]},
+        {"date": "2026-10-20", "label": "Tue 20", "meal": "Ground turkey & sweet potato skillet", "tags": [["cook", "30 min"]]},
+        {"date": "2026-10-21", "label": "Wed 21", "meal": "Meatball leftovers", "tags": []}
+      ],
+      "prep": {
+        "title": "Saturday prep for Sunday lunch",
+        "steps": [
+          "Cook a double batch of the salsa verde chicken (3 lb). Shred, keep half for Saturday wraps, refrigerate the rest in its sauce.",
+          "Make a big pot of rice and refrigerate it.",
+          "Make the homemade salsa and the cucumber-tomato salad (both are better after a night in the fridge).",
+          "Sunday: reheat the chicken and rice, mash the avocados with lime and salt, and set everything out with beans, chips, Cabot cheddar and lactose-free sour cream."
+        ]
+      },
+      "recipes": [
+        {"name": "Salsa verde honey-lime chicken", "meta": "slow cooker · doubled for Sunday",
+         "steps": ["Slow-cook chicken breasts in salsa verde, honey, lime juice and spices.", "Shred and let it soak up the sauce for 10 minutes.", "Saturday: wrap in tortillas with lettuce and tomato. Sunday: the base of the bowl bar."],
+         "source_name": "Carlsbad Cravings", "source_url": "https://carlsbadcravings.com/slow-cooker-salsa-verde-honey-lime-chicken-recipe/"},
+        {"name": "Homemade salsa", "meta": "no-cook · 5 minutes",
+         "steps": ["Pulse tomatoes, onion, jalapeños, garlic and cilantro in a blender or food processor.", "Season with cumin, salt and lime juice. Chill overnight."],
+         "source_name": "Kim's Cravings", "source_url": "http://www.kimscravings.com/2015/06/best-damn-salsa-ever/"},
+        {"name": "Cucumber, tomato & red onion salad", "meta": "no-cook",
+         "steps": ["Slice cucumbers, tomatoes and a little red onion.", "Toss with olive oil, red wine vinegar, a dab of Dijon, dill and salt."],
+         "source_name": "Vikalinka", "source_url": "https://vikalinka.com/cucumber-and-tomato-salad-red-onions/"},
+        {"name": "Instant Pot chicken meatballs & marinara", "meta": "makes ~30 meatballs · Wed + lunches",
+         "steps": ["Mix ground chicken with almond flour, salt, garlic and onion powder and dried herbs; roll into balls.", "Pour marinara and a little water into the pot, add the meatballs and pressure-cook about 5 minutes.", "Serve over pasta."],
+         "source_name": "Whole Kitchen Sink", "source_url": "https://www.wholekitchensink.com/instant-pot-chicken-meatballs"},
+        {"name": "Ground turkey & sweet potato skillet", "meta": "one pan · 30 minutes",
+         "steps": ["Brown ground turkey with diced sweet potato, cumin and chipotle chili powder until the potatoes are tender.", "Stir in black beans, then top with Cabot cheddar, tomato, green onion, salsa and lactose-free sour cream."],
+         "source_name": "The Schmidty Wife", "source_url": "https://theschmidtywife.com/ground-turkey-sweet-potato-skillet/"}
+      ],
+      "shopping": [
+        {"group": "Meat", "items": ["Boneless skinless chicken breast, 3 lb", "Ground chicken, 2 lb", "Ground turkey, 1 lb"]},
+        {"group": "Produce", "items": ["Tomatoes, 10", "Cucumbers, 3", "Avocados, 4", "Limes, 6", "Jalapeños, 4", "Onion, 1 · red onion, 1", "Cilantro, 2 bunches · fresh dill", "Green onions · lettuce", "Sweet potato, 1 large"]},
+        {"group": "Pantry", "items": ["Salsa verde, 2 jars", "Marinara, 24 oz jar", "Almond flour", "Pasta, 1 lb", "Rice, 2 lb bag", "Black beans, 3 cans", "Tortillas", "Tortilla chips, 2 bags", "Cabot cheddar, 2", "Lactose-free sour cream, 2", "Honey, red wine vinegar, cumin (if out)"]},
+        {"group": "Weekly basics", "items": ["Eggs, 18 ct · Lactaid milk", "Bananas, apples, cuties", "Crackers, lunch fruit"]}
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "store": "Harris Teeter",
+      "estimate": 90,
+      "meals": [
+        {"date": "2026-10-22", "label": "Thu 22", "meal": "Crock pot coconut curry chicken over rice", "tags": [["cook", "slow cooker"]]},
+        {"date": "2026-10-23", "label": "Fri 23", "meal": "Date night", "tags": [["out", "eat out"]]},
+        {"date": "2026-10-24", "label": "Sat 24", "meal": "Slow cooker green enchilada chicken soup", "tags": [["cook", "start in the morning"]]},
+        {"date": "2026-10-25", "label": "Sun 25", "meal": "Enchilada soup leftovers", "tags": [["rest", "Sabbath · no cooking"]]},
+        {"date": "2026-10-26", "label": "Mon 26", "meal": "Skillet chicken with white beans & caramelized lemon", "tags": [["cook", "one pan"]]}
+      ],
+      "recipes": [
+        {"name": "Coconut curry chicken", "meta": "crock pot · serves 6",
+         "steps": ["Slow-cook skinless chicken thighs in coconut milk with curry powder, basil, red onion, garlic, ginger and jalapeño.", "Thicken the sauce with a little cornstarch, then stir in cilantro. Serve over rice."],
+         "source_name": "The Food Charlatan", "source_url": "http://thefoodcharlatan.com/2016/02/16/slow-cooker-basil-chicken-in-coconut-curry-sauce/"},
+        {"name": "Green enchilada chicken soup", "meta": "slow cooker · serves 8 · covers Sunday",
+         "steps": ["Slow-cook chicken with diced onion, peppers, green chiles, enchilada sauce, broth and spices.", "Shred the chicken, then stir in beans, dairy-free cream cheese and lime juice.", "Top with cilantro and crushed tortilla chips."],
+         "source_name": "The Defined Dish", "source_url": "https://thedefineddish.com/slow-cooker-green-enchilada-chicken-soup/"},
+        {"name": "Skillet chicken with white beans & lemon", "meta": "one pan · serves 4",
+         "steps": ["Brown seasoned chicken thighs skin-side down until crisp, with lemon slices and shallot caramelizing alongside.", "Add white beans and kale to the pan and finish in the oven until the chicken is cooked through."],
+         "source_name": "NYT Cooking", "source_url": "https://cooking.nytimes.com/recipes/1019382-skillet-chicken-with-white-beans-and-caramelized-lemon"}
+      ],
+      "shopping": [
+        {"group": "Meat", "items": ["Boneless skinless chicken thighs, 2½ lb", "Boneless skinless chicken breast, 2 lb", "Bone-in chicken thighs, 2½ lb"]},
+        {"group": "Produce", "items": ["Red onion · yellow onion", "Green bell pepper · poblano", "Jalapeños, 3", "Fresh ginger · cilantro", "Limes, 2 · lemon, 1 · shallot", "Kale, 1 bunch"]},
+        {"group": "Pantry", "items": ["Coconut milk, 2 cans", "Diced green chiles, 2 small cans", "Green enchilada sauce, 15 oz", "Cannellini beans, 3 cans", "Dairy-free cream cheese (Kite Hill)", "Curry powder, dried basil (if out)"]},
+        {"group": "Weekly basics", "items": ["Eggs · Lactaid milk", "Lunch fruit, crackers"]}
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "store": "Harris Teeter",
+      "estimate": 70,
+      "meals": [
+        {"date": "2026-10-27", "label": "Tue 27", "meal": "Slow cooker chipotle-honey chicken tacos", "tags": [["cook", "slow cooker"]]},
+        {"date": "2026-10-28", "label": "Wed 28", "meal": "Curry or taco leftovers", "tags": []},
+        {"date": "2026-10-29", "label": "Thu 29", "meal": "Greek lemon chicken with rice and cucumber-tomato salad", "tags": [["cook", "marinate in the morning"]]},
+        {"date": "2026-10-30", "label": "Fri 30", "meal": "Greek chicken wraps", "tags": []},
+        {"date": "2026-10-31", "label": "Sat 31", "meal": "Halloween: easy leftovers before trick-or-treating", "tags": []}
+      ],
+      "recipes": [
+        {"name": "Chipotle-honey chicken tacos", "meta": "slow cooker · serves 4",
+         "steps": ["Rub chicken thighs with honey, onion and garlic powder, cumin, salt and chopped chipotles in adobo; slow-cook until tender.", "Shred, stir in black beans and lime juice.", "Serve in warm tortillas with avocado and quick-pickled red onion."],
+         "source_name": "NYT Cooking", "source_url": "https://cooking.nytimes.com/recipes/1019693-slow-cooker-chipotle-honey-chicken-tacos"},
+        {"name": "Greek lemon chicken", "meta": "marinate in the morning",
+         "steps": ["Marinate chicken breasts in olive oil, lemon juice, garlic, thyme, Dijon and salt for a few hours.", "Bake or grill, slice, and serve with rice and the cucumber-tomato salad. Friday: in wraps."],
+         "source_name": "Kale Junkie", "source_url": "https://kalejunkie.com/the-best-ever-greek-chicken-marinade/"}
+      ],
+      "shopping": [
+        {"group": "Meat", "items": ["Boneless skinless chicken thighs, 1½ lb", "Boneless skinless chicken breast, 2 lb"]},
+        {"group": "Produce", "items": ["Lemons, 2 · limes, 2", "Avocados, 2", "Cucumbers, 3 · tomatoes, 3", "Red onion · dill"]},
+        {"group": "Pantry", "items": ["Chipotles in adobo, small can", "Black beans, 1 can", "Tortillas, 2 packs", "Dijon, thyme (if out)"]},
+        {"group": "Weekly basics", "items": ["Eggs · Lactaid milk", "Lunch fruit, crackers", "Halloween candy (if not bought)"]}
+      ]
+    }
+  ]
+}

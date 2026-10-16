@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rest of October Meals</title>
+<style>/* Shared styles for the household update hub and meal-plan pages.
+   Inlined into each page at render time — pages stay self-contained (no external links). */
+:root{
+  --bg:#faf8f5;--surface:#ffffff;--text:#1f2328;--muted:#6a6f76;--border:#e6e1d9;
+  --accent:#2f6b4f;--accent-soft:#e7f1ec;--warn:#9a5b13;--warn-soft:#fbf1e3;
+  --bad:#b42318;--bad-soft:#fdecea;--rest:#5b5f97;--rest-soft:#ecedf7;--track:#ece7df;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16181b;--surface:#1f2226;--text:#e8e6e3;--muted:#9aa0a6;--border:#30343a;
+    --accent:#7cc4a0;--accent-soft:#1f3329;--warn:#e0a85c;--warn-soft:#33281a;
+    --bad:#f08a80;--bad-soft:#3a201e;--rest:#a9adf0;--rest-soft:#26283d;--track:#2a2e33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16181b;--surface:#1f2226;--text:#e8e6e3;--muted:#9aa0a6;--border:#30343a;
+  --accent:#7cc4a0;--accent-soft:#1f3329;--warn:#e0a85c;--warn-soft:#33281a;
+  --bad:#f08a80;--bad-soft:#3a201e;--rest:#a9adf0;--rest-soft:#26283d;--track:#2a2e33;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.6rem;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:1.2rem;margin:36px 0 4px}
+h3{font-size:1rem;margin:0}
+p{margin:0 0 10px}
+a{color:var(--accent)}
+.sub{color:var(--muted);margin:0 0 18px}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 12px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:1.25rem}
+.stat b.good{color:var(--accent)}.stat b.warn{color:var(--warn)}.stat b.bad{color:var(--bad)}
+.stat span{color:var(--muted);font-size:.8rem}
+.note{background:var(--warn-soft);color:var(--text);border-left:3px solid var(--warn);border-radius:6px;padding:10px 12px;font-size:.92rem;margin:12px 0}
+.note.good{background:var(--accent-soft);border-left-color:var(--accent)}
+.trip-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.trip-head .est{color:var(--muted);font-size:.9rem;white-space:nowrap}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0}
+.days{list-style:none;margin:8px 0 0;padding:0}
+.days li{display:grid;grid-template-columns:6.5rem 1fr;gap:8px;padding:7px 0;border-top:1px solid var(--border)}
+.days li:first-child{border-top:none}
+.day{color:var(--muted);font-size:.88rem;padding-top:1px}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:1px}
+.tag.rest{background:var(--rest-soft);color:var(--rest)}
+.tag.out{background:var(--warn-soft);color:var(--warn)}
+.tag.cook{background:var(--accent-soft);color:var(--accent)}
+.card details{border-top:1px solid var(--border);padding:8px 0}
+.card details:first-of-type{border-top:none}
+.card summary{cursor:pointer;font-weight:600}
+summary small{font-weight:400;color:var(--muted)}
+.card details ol{margin:8px 0 4px;padding-left:20px}
+.card details p{margin:6px 0 0;font-size:.9rem;color:var(--muted)}
+.list{list-style:none;margin:6px 0 0;padding:0;columns:2;column-gap:20px}
+.list li{break-inside:avoid;padding:3px 0}
+.list label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.list input{margin-top:4px;accent-color:var(--accent)}
+.list input:checked + span{color:var(--muted);text-decoration:line-through}
+.group{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:12px 0 0}
+.group:first-child{margin-top:4px}
+footer{color:var(--muted);font-size:.8rem;margin-top:40px}
+
+/* Hub: sticky section nav */
+.nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -16px 8px;padding:8px 16px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:none;font-size:.82rem;font-weight:600;text-decoration:none;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:4px 11px}
+.nav a:hover{color:var(--text)}
+
+/* Hub: link-out cards */
+.links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 4px}
+.links a{display:block;text-decoration:none;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.links a:hover{border-color:var(--accent)}
+.links b{display:block;color:var(--accent)}
+.links span{font-size:.82rem;color:var(--muted)}
+
+/* Hub: collapsible sections */
+details.section{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:12px 0;padding:0}
+details.section > summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+details.section > summary::-webkit-details-marker{display:none}
+details.section > summary h2{margin:0;font-size:1.08rem}
+details.section > summary .hint{color:var(--muted);font-size:.85rem;text-align:right}
+details.section > summary::after{content:"▸";color:var(--muted);transition:transform .15s}
+details.section[open] > summary::after{transform:rotate(90deg)}
+details.section > .body{padding:0 16px 14px;border-top:1px solid var(--border)}
+details.section > .body > :first-child{margin-top:12px}
+
+/* Hub: tables and bars */
+table.t{width:100%;border-collapse:collapse;font-size:.92rem}
+table.t th{text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;padding:6px 0;border-bottom:1px solid var(--border)}
+table.t td{padding:7px 0;border-bottom:1px solid var(--border);vertical-align:top}
+table.t tr:last-child td{border-bottom:none}
+table.t .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:10px}
+table.t tr.total td{font-weight:700;border-top:2px solid var(--border)}
+table.t td small{display:block;color:var(--muted);font-size:.8rem}
+.bar{height:8px;background:var(--track);border-radius:99px;overflow:hidden;margin:6px 0 2px}
+.bar > i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.bar.warn > i{background:var(--warn)}.bar.bad > i{background:var(--bad)}
+.recs{margin:8px 0 0;padding-left:20px}
+.recs li{margin:4px 0}
+.goal{padding:8px 0;border-top:1px solid var(--border)}
+.goal:first-child{border-top:none}
+.goal .row{display:flex;justify-content:space-between;gap:12px}
+.goal small{color:var(--muted)}
+
+@media (max-width:560px){
+  .list{columns:1}
+  .summary{grid-template-columns:1fr 1fr}
+  .summary .stat:last-child{grid-column:1/-1}
+  .links{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Rest of October: meals &amp; grocery trips</h1>
+<p class="sub">Oct 17–31 · family of 4 · lactose-free, high-protein, chicken &amp; turkey · no cooking on Sundays</p>
+<div class="summary">
+<div class="stat"><b>3 trips</b><span>Sat 17 · Thu 22 · Tue 27</span></div>
+<div class="stat"><b>~$310</b><span>estimated groceries, all trips</span></div>
+<div class="stat"><b>16 meals</b><span>planned; leftovers cover the rest</span></div>
+</div>
+<div class="note">Groceries come out of the same spending money as eating out, coffee, gas and shopping. Keeping these trips near the estimates is what leaves room for everything else.</div>
+<h2 class="trip-head" id="trip-1">Trip 1 · Saturday, Oct 17 <span class="est">Harris Teeter · ~$150 (incl. Sunday guests)</span></h2>
+<div class="card"><h3>Meals</h3><ul class="days">
+<li><span class="day">Sat 17</span><span>Salsa verde honey-lime chicken wraps <span class="tag cook">slow cooker, start by noon · make extra</span></span></li>
+<li><span class="day">Sun 18 lunch</span><span>Burrito-bowl bar for 6 adults + 2 kids: salsa verde chicken, rice, black beans, homemade salsa, cucumber-tomato salad, guacamole, chips <span class="tag rest">Sabbath · all made Saturday, just reheat</span></span></li>
+<li><span class="day">Sun 18</span><span>Burrito-bowl leftovers <span class="tag rest">no cooking</span></span></li>
+<li><span class="day">Mon 19</span><span>Instant Pot chicken meatballs &amp; marinara over pasta <span class="tag cook">Instant Pot</span></span></li>
+<li><span class="day">Tue 20</span><span>Ground turkey &amp; sweet potato skillet <span class="tag cook">30 min</span></span></li>
+<li><span class="day">Wed 21</span><span>Meatball leftovers</span></li>
+</ul></div>
+<div class="card"><h3>Saturday prep for Sunday lunch</h3><ol style="margin:8px 0 0;padding-left:20px"><li>Cook a double batch of the salsa verde chicken (3 lb). Shred, keep half for Saturday wraps, refrigerate the rest in its sauce.</li><li>Make a big pot of rice and refrigerate it.</li><li>Make the homemade salsa and the cucumber-tomato salad (both are better after a night in the fridge).</li><li>Sunday: reheat the chicken and rice, mash the avocados with lime and salt, and set everything out with beans, chips, Cabot cheddar and lactose-free sour cream.</li></ol></div>
+<div class="card"><h3>Recipes</h3>
+<details><summary>Salsa verde honey-lime chicken <small>· slow cooker · doubled for Sunday</small></summary><ol><li>Slow-cook chicken breasts in salsa verde, honey, lime juice and spices.</li><li>Shred and let it soak up the sauce for 10 minutes.</li><li>Saturday: wrap in tortillas with lettuce and tomato. Sunday: the base of the bowl bar.</li></ol><p><a href="https://carlsbadcravings.com/slow-cooker-salsa-verde-honey-lime-chicken-recipe/" rel="noopener">Full recipe at Carlsbad Cravings</a></p></details>
+<details><summary>Homemade salsa <small>· no-cook · 5 minutes</small></summary><ol><li>Pulse tomatoes, onion, jalapeños, garlic and cilantro in a blender or food processor.</li><li>Season with cumin, salt and lime juice. Chill overnight.</li></ol><p><a href="http://www.kimscravings.com/2015/06/best-damn-salsa-ever/" rel="noopener">Full recipe at Kim&#x27;s Cravings</a></p></details>
+<details><summary>Cucumber, tomato &amp; red onion salad <small>· no-cook</small></summary><ol><li>Slice cucumbers, tomatoes and a little red onion.</li><li>Toss with olive oil, red wine vinegar, a dab of Dijon, dill and salt.</li></ol><p><a href="https://vikalinka.com/cucumber-and-tomato-salad-red-onions/" rel="noopener">Full recipe at Vikalinka</a></p></details>
+<details><summary>Instant Pot chicken meatballs &amp; marinara <small>· makes ~30 meatballs · Wed + lunches</small></summary><ol><li>Mix ground chicken with almond flour, salt, garlic and onion powder and dried herbs; roll into balls.</li><li>Pour marinara and a little water into the pot, add the meatballs and pressure-cook about 5 minutes.</li><li>Serve over pasta.</li></ol><p><a href="https://www.wholekitchensink.com/instant-pot-chicken-meatballs" rel="noopener">Full recipe at Whole Kitchen Sink</a></p></details>
+<details><summary>Ground turkey &amp; sweet potato skillet <small>· one pan · 30 minutes</small></summary><ol><li>Brown ground turkey with diced sweet potato, cumin and chipotle chili powder until the potatoes are tender.</li><li>Stir in black beans, then top with Cabot cheddar, tomato, green onion, salsa and lactose-free sour cream.</li></ol><p><a href="https://theschmidtywife.com/ground-turkey-sweet-potato-skillet/" rel="noopener">Full recipe at The Schmidty Wife</a></p></details>
+</div>
+<div class="card"><h3>Shopping list</h3><ul class="list" data-trip="1">
+<li class="group">Meat</li>
+<li><label><input type="checkbox"><span>Boneless skinless chicken breast, 3 lb</span></label></li>
+<li><label><input type="checkbox"><span>Ground chicken, 2 lb</span></label></li>
+<li><label><input type="checkbox"><span>Ground turkey, 1 lb</span></label></li>
+<li class="group">Produce</li>
+<li><label><input type="checkbox"><span>Tomatoes, 10</span></label></li>
+<li><label><input type="checkbox"><span>Cucumbers, 3</span></label></li>
+<li><label><input type="checkbox"><span>Avocados, 4</span></label></li>
+<li><label><input type="checkbox"><span>Limes, 6</span></label></li>
+<li><label><input type="checkbox"><span>Jalapeños, 4</span></label></li>
+<li><label><input type="checkbox"><span>Onion, 1 · red onion, 1</span></label></li>
+<li><label><input type="checkbox"><span>Cilantro, 2 bunches · fresh dill</span></label></li>
+<li><label><input type="checkbox"><span>Green onions · lettuce</span></label></li>
+<li><label><input type="checkbox"><span>Sweet potato, 1 large</span></label></li>
+<li class="group">Pantry</li>
+<li><label><input type="checkbox"><span>Salsa verde, 2 jars</span></label></li>
+<li><label><input type="checkbox"><span>Marinara, 24 oz jar</span></label></li>
+<li><label><input type="checkbox"><span>Almond flour</span></label></li>
+<li><label><input type="checkbox"><span>Pasta, 1 lb</span></label></li>
+<li><label><input type="checkbox"><span>Rice, 2 lb bag</span></label></li>
+<li><label><input type="checkbox"><span>Black beans, 3 cans</span></label></li>
+<li><label><input type="checkbox"><span>Tortillas</span></label></li>
+<li><label><input type="checkbox"><span>Tortilla chips, 2 bags</span></label></li>
+<li><label><input type="checkbox"><span>Cabot cheddar, 2</span></label></li>
+<li><label><input type="checkbox"><span>Lactose-free sour cream, 2</span></label></li>
+<li><label><input type="checkbox"><span>Honey, red wine vinegar, cumin (if out)</span></label></li>
+<li class="group">Weekly basics</li>
+<li><label><input type="checkbox"><span>Eggs, 18 ct · Lactaid milk</span></label></li>
+<li><label><input type="checkbox"><span>Bananas, apples, cuties</span></label></li>
+<li><label><input type="checkbox"><span>Crackers, lunch fruit</span></label></li>
+</ul></div>
+<h2 class="trip-head" id="trip-2">Trip 2 · Thursday, Oct 22 <span class="est">Harris Teeter · ~$90</span></h2>
+<div class="card"><h3>Meals</h3><ul class="days">
+<li><span class="day">Thu 22</span><span>Crock pot coconut curry chicken over rice <span class="tag cook">slow cooker</span></span></li>
+<li><span class="day">Fri 23</span><span>Date night <span class="tag out">eat out</span></span></li>
+<li><span class="day">Sat 24</span><span>Slow cooker green enchilada chicken soup <span class="tag cook">start in the morning</span></span></li>
+<li><span class="day">Sun 25</span><span>Enchilada soup leftovers <span class="tag rest">Sabbath · no cooking</span></span></li>
+<li><span class="day">Mon 26</span><span>Skillet chicken with white beans &amp; caramelized lemon <span class="tag cook">one pan</span></span></li>
+</ul></div>
+<div class="card"><h3>Recipes</h3>
+<details><summary>Coconut curry chicken <small>· crock pot · serves 6</small></summary><ol><li>Slow-cook skinless chicken thighs in coconut milk with curry powder, basil, red onion, garlic, ginger and jalapeño.</li><li>Thicken the sauce with a little cornstarch, then stir in cilantro. Serve over rice.</li></ol><p><a href="http://thefoodcharlatan.com/2016/02/16/slow-cooker-basil-chicken-in-coconut-curry-sauce/" rel="noopener">Full recipe at The Food Charlatan</a></p></details>
+<details><summary>Green enchilada chicken soup <small>· slow cooker · serves 8 · covers Sunday</small></summary><ol><li>Slow-cook chicken with diced onion, peppers, green chiles, enchilada sauce, broth and spices.</li><li>Shred the chicken, then stir in beans, dairy-free cream cheese and lime juice.</li><li>Top with cilantro and crushed tortilla chips.</li></ol><p><a href="https://thedefineddish.com/slow-cooker-green-enchilada-chicken-soup/" rel="noopener">Full recipe at The Defined Dish</a></p></details>
+<details><summary>Skillet chicken with white beans &amp; lemon <small>· one pan · serves 4</small></summary><ol><li>Brown seasoned chicken thighs skin-side down until crisp, with lemon slices and shallot caramelizing alongside.</li><li>Add white beans and kale to the pan and finish in the oven until the chicken is cooked through.</li></ol><p><a href="https://cooking.nytimes.com/recipes/1019382-skillet-chicken-with-white-beans-and-caramelized-lemon" rel="noopener">Full recipe at NYT Cooking</a></p></details>
+</div>
+<div class="card"><h3>Shopping list</h3><ul class="list" data-trip="2">
+<li class="group">Meat</li>
+<li><label><input type="checkbox"><span>Boneless skinless chicken thighs, 2½ lb</span></label></li>
+<li><label><input type="checkbox"><span>Boneless skinless chicken breast, 2 lb</span></label></li>
+<li><label><input type="checkbox"><span>Bone-in chicken thighs, 2½ lb</span></label></li>
+<li class="group">Produce</li>
+<li><label><input type="checkbox"><span>Red onion · yellow onion</span></label></li>
+<li><label><input type="checkbox"><span>Green bell pepper · poblano</span></label></li>
+<li><label><input type="checkbox"><span>Jalapeños, 3</span></label></li>
+<li><label><input type="checkbox"><span>Fresh ginger · cilantro</span></label></li>
+<li><label><input type="checkbox"><span>Limes, 2 · lemon, 1 · shallot</span></label></li>
+<li><label><input type="checkbox"><span>Kale, 1 bunch</span></label></li>
+<li class="group">Pantry</li>
+<li><label><input type="checkbox"><span>Coconut milk, 2 cans</span></label></li>
+<li><label><input type="checkbox"><span>Diced green chiles, 2 small cans</span></label></li>
+<li><label><input type="checkbox"><span>Green enchilada sauce, 15 oz</span></label></li>
+<li><label><input type="checkbox"><span>Cannellini beans, 3 cans</span></label></li>
+<li><label><input type="checkbox"><span>Dairy-free cream cheese (Kite Hill)</span></label></li>
+<li><label><input type="checkbox"><span>Curry powder, dried basil (if out)</span></label></li>
+<li class="group">Weekly basics</li>
+<li><label><input type="checkbox"><span>Eggs · Lactaid milk</span></label></li>
+<li><label><input type="checkbox"><span>Lunch fruit, crackers</span></label></li>
+</ul></div>
+<h2 class="trip-head" id="trip-3">Trip 3 · Tuesday, Oct 27 <span class="est">Harris Teeter · ~$70</span></h2>
+<div class="card"><h3>Meals</h3><ul class="days">
+<li><span class="day">Tue 27</span><span>Slow cooker chipotle-honey chicken tacos <span class="tag cook">slow cooker</span></span></li>
+<li><span class="day">Wed 28</span><span>Curry or taco leftovers</span></li>
+<li><span class="day">Thu 29</span><span>Greek lemon chicken with rice and cucumber-tomato salad <span class="tag cook">marinate in the morning</span></span></li>
+<li><span class="day">Fri 30</span><span>Greek chicken wraps</span></li>
+<li><span class="day">Sat 31</span><span>Halloween: easy leftovers before trick-or-treating</span></li>
+</ul></div>
+<div class="card"><h3>Recipes</h3>
+<details><summary>Chipotle-honey chicken tacos <small>· slow cooker · serves 4</small></summary><ol><li>Rub chicken thighs with honey, onion and garlic powder, cumin, salt and chopped chipotles in adobo; slow-cook until tender.</li><li>Shred, stir in black beans and lime juice.</li><li>Serve in warm tortillas with avocado and quick-pickled red onion.</li></ol><p><a href="https://cooking.nytimes.com/recipes/1019693-slow-cooker-chipotle-honey-chicken-tacos" rel="noopener">Full recipe at NYT Cooking</a></p></details>
+<details><summary>Greek lemon chicken <small>· marinate in the morning</small></summary><ol><li>Marinate chicken breasts in olive oil, lemon juice, garlic, thyme, Dijon and salt for a few hours.</li><li>Bake or grill, slice, and serve with rice and the cucumber-tomato salad. Friday: in wraps.</li></ol><p><a href="https://kalejunkie.com/the-best-ever-greek-chicken-marinade/" rel="noopener">Full recipe at Kale Junkie</a></p></details>
+</div>
+<div class="card"><h3>Shopping list</h3><ul class="list" data-trip="3">
+<li class="group">Meat</li>
+<li><label><input type="checkbox"><span>Boneless skinless chicken thighs, 1½ lb</span></label></li>
+<li><label><input type="checkbox"><span>Boneless skinless chicken breast, 2 lb</span></label></li>
+<li class="group">Produce</li>
+<li><label><input type="checkbox"><span>Lemons, 2 · limes, 2</span></label></li>
+<li><label><input type="checkbox"><span>Avocados, 2</span></label></li>
+<li><label><input type="checkbox"><span>Cucumbers, 3 · tomatoes, 3</span></label></li>
+<li><label><input type="checkbox"><span>Red onion · dill</span></label></li>
+<li class="group">Pantry</li>
+<li><label><input type="checkbox"><span>Chipotles in adobo, small can</span></label></li>
+<li><label><input type="checkbox"><span>Black beans, 1 can</span></label></li>
+<li><label><input type="checkbox"><span>Tortillas, 2 packs</span></label></li>
+<li><label><input type="checkbox"><span>Dijon, thyme (if out)</span></label></li>
+<li class="group">Weekly basics</li>
+<li><label><input type="checkbox"><span>Eggs · Lactaid milk</span></label></li>
+<li><label><input type="checkbox"><span>Lunch fruit, crackers</span></label></li>
+<li><label><input type="checkbox"><span>Halloween candy (if not bought)</span></label></li>
+</ul></div>
+<footer>Prices estimated from recent Harris Teeter and Whole Foods receipts. Check the pantry before each trip; items marked "if out" are usually on hand. Ticks on the shopping lists are saved on this device only.</footer>
+</main>
+<script>
+// Remember ticked items on this device only (per-viewer convenience; safe to lose).
+(function () {
+  var KEY = "meals-60547d185b", saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  document.querySelectorAll('.list').forEach(function (list) {
+    list.querySelectorAll('input[type=checkbox]').forEach(function (cb, i) {
+      var id = list.dataset.trip + ':' + i;
+      cb.checked = !!saved[id];
+      cb.addEventListener('change', function () {
+        if (cb.checked) saved[id] = 1; else delete saved[id];
+        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
